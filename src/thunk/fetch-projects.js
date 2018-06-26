@@ -28,7 +28,7 @@ export default function (dispatch, getState) {
                 role: 'animator'
               }
             ],
-            notifications: "permisssion_request" 
+            notifications: "permissions request" 
           },
           {
             id: "456783",
@@ -49,7 +49,7 @@ export default function (dispatch, getState) {
                 role: 'animator'
               }
             ],
-            notifications: "permisssion_request" 
+            notifications: "permissions request" 
           },
           {
             id: "4567567883",

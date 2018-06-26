@@ -16,14 +16,8 @@ class Card extends Component {
             <i className="heart outline like icon"></i>
             17 likes
           </span>
-          <i className="comment icon"></i>
-          3 comments
         </div>
         <div className="extra content">
-          <div className="ui large transparent left icon input">
-            <i className="heart outline icon"></i>
-            <input type="text" placeholder="Add Comment..."/>
-          </div>
         </div>
       </div>
     )

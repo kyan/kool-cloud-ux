@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux"
 import { Component } from "react";
 import FadeIn from 'react-fade-in';
-import { Table, Button} from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react'
 import _ from "lodash";
 
 const TableRow = ({ viewProjectAction, project, users }) => {
@@ -14,13 +14,19 @@ const TableRow = ({ viewProjectAction, project, users }) => {
     }).pop();
   }
 
+  const getPermission = (notifications) => {
+    return notifications ? (
+      <span><i class="bell outline icon"></i>{notifications}</span>
+    ) : null;
+  }
+
   return(
       <Table.Row >
         <Table.Cell ><FadeIn>{project.title}</FadeIn></Table.Cell>
         <Table.Cell><FadeIn>{ getUserOwner(project.ownerid) }</FadeIn></Table.Cell>
         <Table.Cell></Table.Cell>
-        <Table.Cell><a href="" onClick={ viewProjectAction }><i class="eye icon"></i> View</a></Table.Cell>
-        <Table.Cell positive={Boolean(project.notifications)}><FadeIn>{project.notifications}</FadeIn></Table.Cell>
+        <Table.Cell><a href="" onClick={ viewProjectAction }><i className="eye icon"></i> View</a></Table.Cell>
+        <Table.Cell positive={Boolean(project.notifications)}><FadeIn>{ getPermission(project.notifications) } </FadeIn></Table.Cell>
       </Table.Row>
   )
 }

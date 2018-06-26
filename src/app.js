@@ -7,6 +7,7 @@ import Signin from './routes/signin'
 import Signup from './routes/signup'
 
 import NotFound from './routes/not-found'
+import "./app.css"
 
 const loggedIn = () => {
   return true;
@@ -33,8 +34,8 @@ const App = () => (
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
-    <footer class="page-footer">
-      <div class="ui container">
+    <footer className="page-footer">
+      <div className="ui container">
         <p>© KoolCloud 2018</p>
       </div>
     </footer>

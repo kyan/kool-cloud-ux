@@ -1,0 +1,66 @@
+@media only screen and (max-width: 764px) {
+  .cloud {
+    position: absolute;
+    right: 40px;
+    top: 61px;
+  }
+
+  .cloudlogo {
+    width:100%;
+  }
+}
+
+.ui.primary.button {
+  min-width: 15px;
+}
+
+.ui.grid>.row>.column {
+  margin-bottom: 10px;
+}
+
+.ui.table td.positive, .ui.table tr.positive {
+  padding-left: 10px;
+  background: #f5f7ff!important;
+  color: #408af3!important;
+}
+
+.cloud {
+  position: absolute;
+  right: 140px;
+  top: 65px;
+  animation: cloud-drift infinite 50s ease;
+}
+
+@media only screen and (max-width: 748px) {
+  .cloud {
+    position: absolute;
+    right: 40px;
+    top: 70px;
+  }
+
+  .cloudlogo {
+    width:90%;
+  }
+
+  .masthead {
+    min-height: 324px;
+  }
+}
+
+@media only screen and (max-width: 748px) {
+  .ui.container {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.table:not(.unstackable) thead {
+    display: none;
+  }
+}
+
+@keyframes cloud-drift {
+  0% { transform: translate(0%, 0px) }
+  50% { transform: translate(15%, 0px) }
+  100% { transform: translate(0%, 0px) }
+}

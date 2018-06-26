@@ -3,7 +3,7 @@ import { Component } from "react";
 import { connect } from "react-redux"
 import { Breadcrumb } from 'semantic-ui-react'
 import Card from '../component/card'
-
+import HeaderBar from "../component/header-bar"
 class Project extends Component {
 
   findProject(projectid) {
@@ -23,17 +23,7 @@ class Project extends Component {
     return (
         <div>
         <div class="page-header">
-          <div class="ui container grid">
-            <div class="eight wide column">
-              <img src="./css/themes/koolcapture/assets/images/logo.svg" alt=""/>
-            </div>
-            <div class="eight wide column">
-              <nav class="primary-nav">
-                <a href="#sign-out" class="primary-nav-link"><i class="user circle icon"></i></a>
-                <a href="#sign-out" class="primary-nav-link"><i class="sign out icon"></i></a>
-              </nav>
-            </div>
-          </div>
+        <HeaderBar/>
         <header class="masthead small ui">
           <div class="ui container">
             <div class="ui container">
@@ -47,7 +37,7 @@ class Project extends Component {
         </header>
         
         <div class="ui form container ">
-          <a href='' onClick={ (e) => { this.changeLocation(e, `#/project-settings/${this.props.match.params.id}`); } } class="ui items add-user-link"><i class="phabricator icon"></i> Settings</a>
+          <a href='' onClick={ (e) => { this.changeLocation(e, `#/project-settings/${this.props.match.params.id}`); } } class="ui items add-user-link"><i class="edit icon"></i> Settings</a>
           <h3>Film shots</h3>
           <div class="ui grid stackable shots-grid">
             <div class="four column row">
