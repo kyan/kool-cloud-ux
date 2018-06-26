@@ -10,6 +10,14 @@
   }
 }
 
+.ui.input>input {
+  color: #f9f4f4;
+}
+
+.ui.input.focus>input, .ui.input>input:focus {
+  color: #ffffff;
+}
+
 .ui.primary.button {
   min-width: 15px;
 }
@@ -17,6 +25,7 @@
 .ui.grid>.row>.column {
   margin-bottom: 10px;
 }
+
 
 .ui.table td.positive, .ui.table tr.positive {
   padding-left: 10px;

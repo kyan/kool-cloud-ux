@@ -6,6 +6,12 @@
   .cloudlogo {
     width: 100%; } }
 
+.ui.input > input {
+  color: #f9f4f4; }
+
+.ui.input.focus > input, .ui.input > input:focus {
+  color: #ffffff; }
+
 .ui.primary.button {
   min-width: 15px; }
 
