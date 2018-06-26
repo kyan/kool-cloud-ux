@@ -5,24 +5,6 @@ import _ from "lodash";
 import {  Search  } from 'semantic-ui-react'
 import ProjectConstants from "../constant/project"
 
-const state = state => {
-  return {
-    searchfilter : state.searchFilter,
-    projects : state.projects
-  }
-};
-
-const actions = dispatch => {
-  return {
-    dispatchFilter : (filterValue) => {
-      dispatch({
-      type: ProjectConstants.SEARCH_FILTER,
-        payload: filterValue
-      })
-    }
-  }
-};
-
 class ProjectSearch extends Component {
 
   handleResultSelect = (e, { result }) => {
@@ -52,5 +34,21 @@ class ProjectSearch extends Component {
   }
 }
 
-export default connect(state, actions)(ProjectSearch);
+export default connect(
+  state => {
+    return {
+      searchfilter : state.searchFilter,
+      projects : state.projects
+    }
+  }, 
+  dispatch => {
+    return {
+      dispatchFilter : (filterValue) => {
+        dispatch({
+          type: ProjectConstants.SEARCH_FILTER,
+          payload: filterValue
+        })
+      }
+    }
+  })(ProjectSearch);
 

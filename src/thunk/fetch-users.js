@@ -1,7 +1,7 @@
 
 import UserConstants from "../constant/user"
 
-export default function (dispatch, getState) {
+export default function (dispatch) {
   
   dispatch(
     { 

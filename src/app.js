@@ -1,9 +1,8 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import { Container } from 'semantic-ui-react'
-import FadeIn from 'react-fade-in';
 import Home from './routes/home'
 import Project from './routes/project'
+import ProjectSettings from './routes/project-settings'
 import Signin from './routes/signin'
 import Signup from './routes/signup'
 
@@ -15,27 +14,31 @@ const loggedIn = () => {
 
 const loginSwitch = () => (
   loggedIn() ? (
-    <FadeIn transitionDuration='500'>
-      <Home/>
-    </FadeIn>
+    <Home/>
   ) : (
     <Redirect to="/signin"/>
   )
 )
 
 const App = () => (
-  <Container>
+  <div>
     <Router>
       <Switch>
         <Route exact path="/" 
         render={ loginSwitch }/>
         <Route path="/project/:id" component={Project} />
+        <Route path="/project-settings/:id" component={ProjectSettings} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
-  </Container>
+    <footer class="page-footer">
+      <div class="ui container">
+        <p>© KoolCloud 2018</p>
+      </div>
+    </footer>
+  </div>
 );
 
 export default App;

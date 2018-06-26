@@ -19,7 +19,7 @@ const TableRow = ({ viewProjectAction, project, users }) => {
         <Table.Cell ><FadeIn>{project.title}</FadeIn></Table.Cell>
         <Table.Cell><FadeIn>{ getUserOwner(project.ownerid) }</FadeIn></Table.Cell>
         <Table.Cell></Table.Cell>
-        <Table.Cell><Button size='mini' onClick={ viewProjectAction } >View</Button> | <Button size='mini'>Modify</Button></Table.Cell>
+        <Table.Cell><a href="" onClick={ viewProjectAction }><i class="eye icon"></i> View</a></Table.Cell>
         <Table.Cell positive={Boolean(project.notifications)}><FadeIn>{project.notifications}</FadeIn></Table.Cell>
       </Table.Row>
   )
@@ -37,14 +37,15 @@ class ProjectsTable extends Component {
     const filteredProjects = this.filterProjects(projects, searchFilter)
     return (filteredProjects) ? filteredProjects.map((project, index) => {
       return  (
-        
-        <TableRow 
-          viewProjectAction={ () => { this.props.actions.viewProject(project.id); } }
+        <TableRow className='ui celled table'
+          viewProjectAction={ (e) => { 
+            e.preventDefault();
+            this.props.actions.viewProject(project.id); } 
+          }
           project={ project }
           users={ this.props.projects }
           key={ index }
         />
-        
       )
     }) : null;
   }
@@ -75,7 +76,6 @@ class ProjectsTable extends Component {
     )
   }
 }
-
 export default connect(
   state => {
     return {
