@@ -9,8 +9,8 @@ export default function HeaderBar (props) {
         </div>
         <div className="eight wide column">
           <nav className="primary-nav">
-            <a href="#sign-out" className="primary-nav-link"><i className="user circle icon"></i></a>
-            <a href="#sign-out" className="primary-nav-link"><i className="sign out icon"></i></a>
+            <a href="#signin" className="primary-nav-link"><i className="user circle icon"></i></a>
+            <a href="#signout" className="primary-nav-link"><i className="sign out icon"></i></a>
           </nav>
         </div>
       </div>

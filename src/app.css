@@ -4,10 +4,29 @@
     right: 40px;
     top: 61px; }
   .cloudlogo {
-    width: 100%; } }
+    width: 100%; }
+  .login-box {
+    margin-top: -268px; }
+  .signin-cloudlogo > img {
+    width: 150px !important; } }
+
+.ui.teal.header {
+  color: #ffffff !important; }
+
+.login-box {
+  margin-top: -246px; }
+
+.register-box {
+  margin-top: -337px; }
+
+.signin-cloudlogo > img {
+  width: 250px !important; }
 
 .ui.input > input {
   color: #f9f4f4; }
+
+.ui.form input[type=text], .ui.form input[type=text]:focus {
+  color: #ffffff; }
 
 .ui.input.focus > input, .ui.input > input:focus {
   color: #ffffff; }
