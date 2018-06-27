@@ -1,9 +1,10 @@
 import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux"
-import { Breadcrumb } from 'semantic-ui-react'
 import Card from '../component/card'
-import HeaderBar from "../component/header-bar"
+import HeaderBar from "../partials/header-bar"
+import MastheadSmall from "../partials/masthead-small"
+import changeLocation from "../signal/change-location"
 class Project extends Component {
 
   findProject(projectid) {
@@ -12,54 +13,39 @@ class Project extends Component {
     });
   }
 
-  changeLocation(e, location) {
-    e.preventDefault();
-    window.location = location;
-  }
-
   render() {
     const project = this.findProject(this.props.match.params.id);
     const title = project ? project.title : 'No Film of this name' ;
     return (
         <div>
-        <div class="page-header">
+        <div className="page-header">
         <HeaderBar/>
-        <header class="masthead small ui">
-          <div class="ui container">
-            <div class="ui container">
-                <Breadcrumb>
-                  <Breadcrumb.Section onClick={ (e) => {  this.changeLocation(e, `#/`) } } >Home</Breadcrumb.Section>
-                  <Breadcrumb.Divider />
-                  <Breadcrumb.Section >{title}</Breadcrumb.Section>
-                </Breadcrumb>
-            </div>
-          </div>
-        </header>
+        <MastheadSmall pageTitle={title} title={title}/>
         
-        <div class="ui form container ">
-          <a href='' onClick={ (e) => { this.changeLocation(e, `#/project-settings/${this.props.match.params.id}`); } } class="ui items add-user-link"><i class="edit icon"></i> Settings</a>
+        <div className="ui form container ">
+          <a href='' onClick={ changeLocation(`#/project-settings/${this.props.match.params.id}`) } className="ui items add-user-link"><i className="edit icon"></i> Settings</a>
           <h3>Film shots</h3>
-          <div class="ui grid stackable shots-grid">
-            <div class="four column row">
-              <div class="ui column">
+          <div className="ui grid stackable shots-grid">
+            <div className="four column row">
+              <div className="ui column">
                 <Card/>
               </div>
-              <div class="ui column">
+              <div className="ui column">
                 <Card/>
               </div>
-              <div class="ui column">
+              <div className="ui column">
                 <Card/>
               </div>
-              <div class="ui column">
+              <div className="ui column">
                 <Card/>
               </div>
-              <div class="ui four column">
+              <div className="ui four column">
                 <Card/>
               </div>
-              <div class="ui four column">
+              <div className="ui four column">
                 <Card/>
               </div>
-              <div class="ui four column">
+              <div className="ui four column">
                 <Card/>
               </div>
             </div>

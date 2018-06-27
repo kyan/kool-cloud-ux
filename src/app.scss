@@ -40,6 +40,13 @@
   animation: cloud-drift infinite 50s ease;
 }
 
+.masthead {
+  h1 {
+    font-size: 40px;
+    color: #FFFFFF;
+  }
+}
+
 @media only screen and (max-width: 748px) {
   .cloud {
     position: absolute;

@@ -3,14 +3,10 @@ import ProjectConstants from "../constant/project"
 const apiMiddleWare = (store) => (next) => (action) => {
   
   switch (action.type) {
-    case ProjectConstants.FETCH:
-      console.log(ProjectConstants.FETCH);
-      break
-    case ProjectConstants.SELECT:
-      console.log('ProjectConstants.SELECT', action.payload)
+    case ProjectConstants.SET_SEARCH_FILTER:
+      
       break;   
     default:
-  
   }
   
   next(action)

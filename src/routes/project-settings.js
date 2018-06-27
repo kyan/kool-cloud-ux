@@ -1,8 +1,10 @@
 import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux"
-import { Breadcrumb, Dropdown, Modal, Button } from 'semantic-ui-react'
-import HeaderBar from "../component/header-bar"
+import { Dropdown, Modal, Button } from 'semantic-ui-react'
+import HeaderBar from "../partials/header-bar"
+import MastheadSmall from "../partials/masthead-small"
+
 class ProjectSettings extends Component {
 
   constructor() {
@@ -16,11 +18,6 @@ class ProjectSettings extends Component {
     });
   }
 
-  changeLocation(e, location) {
-    e.preventDefault();
-    window.location = location;
-  }
-
   render() {
     const project = this.findProject(this.props.match.params.id);
     const title = project ? project.title : 'loading' ;
@@ -30,17 +27,7 @@ class ProjectSettings extends Component {
         <div>
           <div className="page-header">
             <HeaderBar />
-            <header className="masthead small ui">
-              <div className="ui container">
-                <div className="ui container">
-                    <Breadcrumb>
-                      <Breadcrumb.Section onClick={ (e) => {  this.changeLocation(e, `#/`) } } >Home</Breadcrumb.Section>
-                      <Breadcrumb.Divider />
-                      <Breadcrumb.Section >{title}</Breadcrumb.Section>
-                    </Breadcrumb>
-                </div>
-              </div>
-            </header>
+            <MastheadSmall pageTitle={title} title={title}/>
           </div>
           <form action="" className="ui form container grid">
             <div className="ui six wide column">
@@ -68,7 +55,6 @@ class ProjectSettings extends Component {
               
             </div>
             <div className="ui ten wide column">
-              
               <div className="ui segment">
                 <h4>Shared with</h4>
                 <div className="ui grid stackable">

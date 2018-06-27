@@ -6,7 +6,7 @@ class Card extends Component {
     return (
       <div className="ui card">
         <div className="content">
-        <i class="icon user"></i> Eliot <div className="right floated meta">Plan 1 has a really long title</div>
+        <i className="icon user"></i> Eliot <div className="right floated meta">Plan 1 has a really long title</div>
         </div>
         <div className="image">
           <img src="./img/fake-image.png" alt=''/>

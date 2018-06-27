@@ -1,53 +1,18 @@
 import React from "react";
 import { connect } from "react-redux"
 import { Component } from "react";
-import FadeIn from 'react-fade-in';
 import { Table } from 'semantic-ui-react'
-import _ from "lodash";
-
-const TableRow = ({ viewProjectAction, project, users }) => {
-  const getUserOwner = (ownerid) => {
-    return users.filter((user) => {
-      return ownerid === user.id
-    }).map((user) => { 
-      return user.nickname;
-    }).pop();
-  }
-
-  const getPermission = (notifications) => {
-    return notifications ? (
-      <span><i class="bell outline icon"></i>{notifications}</span>
-    ) : null;
-  }
-
-  return(
-      <Table.Row >
-        <Table.Cell ><FadeIn>{project.title}</FadeIn></Table.Cell>
-        <Table.Cell><FadeIn>{ getUserOwner(project.ownerid) }</FadeIn></Table.Cell>
-        <Table.Cell></Table.Cell>
-        <Table.Cell><a href="" onClick={ viewProjectAction }><i className="eye icon"></i> View</a></Table.Cell>
-        <Table.Cell positive={Boolean(project.notifications)}><FadeIn>{ getPermission(project.notifications) } </FadeIn></Table.Cell>
-      </Table.Row>
-  )
-}
-
+import filterProjects from '../reducer/filter-projects'
+import ProjectTableRow from './projects-table-row'
+import changeLocation from "../signal/change-location"
 class ProjectsTable extends Component {
 
-  filterProjects(projects, searchFilter) {
-    const re = new RegExp(_.escapeRegExp(searchFilter), 'i');
-    const isMatch = result => re.test(result.title)
-    return _.filter(projects, isMatch);
-  }
-
   rows(projects, searchFilter) {
-    const filteredProjects = this.filterProjects(projects, searchFilter)
+    const filteredProjects = filterProjects(searchFilter, projects)
     return (filteredProjects) ? filteredProjects.map((project, index) => {
       return  (
-        <TableRow className='ui celled table'
-          viewProjectAction={ (e) => { 
-            e.preventDefault();
-            this.props.actions.viewProject(project.id); } 
-          }
+        <ProjectTableRow className='ui celled table'
+          viewProjectAction={ changeLocation(`#/project/${project.id}`) }
           project={ project }
           users={ this.props.projects }
           key={ index }
@@ -88,15 +53,6 @@ export default connect(
       users : state.users,
       projects : state.projects,
       searchFilter: state.searchFilter
-    }
-  }, 
-  dispatch => {
-    return {
-      actions: {
-        viewProject : (id) => {
-          window.location = `#/project/${id}`
-        }
-      }
     }
   }
 )(ProjectsTable);

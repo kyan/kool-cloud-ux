@@ -15,7 +15,7 @@ export function projects(projects=[], action) {
 
 export function searchFilter (searchFilter='', action) {
   switch(action.type) {
-    case ProjectConstants.SEARCH_FILTER:
+    case ProjectConstants.SET_SEARCH_FILTER:
       searchFilter = action.payload
       break;
     default:
