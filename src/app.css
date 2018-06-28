@@ -28,6 +28,9 @@
 .ui.form input[type=text], .ui.form input[type=text]:focus {
   color: #ffffff; }
 
+.ui.input.error > input {
+  background-color: #e77c7c !important; }
+
 .ui.input.focus > input, .ui.input > input:focus {
   color: #ffffff; }
 
