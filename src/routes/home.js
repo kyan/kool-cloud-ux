@@ -1,21 +1,16 @@
 import React from "react";
-import { Component } from "react";
-import HeaderBar from "../partials/header-bar"
-import MastheadBig from '../partials/masthead-big'
-import HomeProjectList from '../partials/home-project-list'
+import HeaderBar from "../presentors/header-bar"
+import HomeMastheadConnector from '../connectors/home-masthead'
+import HomeProjectList from '../connectors/home-project-list'
 
-class Home extends Component {
-  
-  render() {
-    return (
-      <div>
-        <HeaderBar />
-        <MastheadBig/>
-        <HomeProjectList/>
-      </div>
-    );
-  }
+export default function Home() {
+
+  return (
+    <div>
+      <HeaderBar />
+      <HomeMastheadConnector/>
+      <HomeProjectList/>
+    </div>
+  );
 
 }
-
-export default Home

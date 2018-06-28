@@ -1,8 +1,6 @@
 import React from "react";
-import { Component } from "react";
 
-class Card extends Component {
-  render () {
+export default function Card ({title, creator, imageUrl, likes}) {
     return (
       <div className="ui card">
         <div className="content">
@@ -21,7 +19,5 @@ class Card extends Component {
         </div>
       </div>
     )
-  }
 }
 
-export default Card

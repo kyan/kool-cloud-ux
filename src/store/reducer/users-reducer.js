@@ -1,4 +1,4 @@
-import UserConstants from "../constant/user"
+import UserConstants from "../../constant/user"
 
 const usersReducer = function (state=[], action) {
   switch(action.type) {

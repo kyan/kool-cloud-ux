@@ -2,14 +2,13 @@ import React from "react";
 import { connect } from "react-redux"
 import { Component } from "react";
 import { Table } from 'semantic-ui-react'
-import filterProjects from '../reducer/filter-projects'
-import ProjectTableRow from './projects-table-row'
+import filterProjects from '../pipes/filter-projects'
+import ProjectTableRow from '../presentors/projects-table-row'
 import changeLocation from "../signal/change-location"
 class ProjectsTable extends Component {
 
-  rows(projects, searchFilter) {
-    const filteredProjects = filterProjects(searchFilter, projects)
-    return (filteredProjects) ? filteredProjects.map((project, index) => {
+  rows(projects) {
+    return (projects) ? projects.map((project, index) => {
       return  (
         <ProjectTableRow className='ui celled table'
           viewProjectAction={ changeLocation(`#/project/${project.id}`) }
@@ -35,7 +34,7 @@ class ProjectsTable extends Component {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          { this.rows(projects, searchFilter) }
+          { this.rows(filterProjects(searchFilter, projects)) }
         </Table.Body>
         <Table.Footer>
           <Table.Row>
@@ -50,7 +49,6 @@ class ProjectsTable extends Component {
 export default connect(
   state => {
     return {
-      users : state.users,
       projects : state.projects,
       searchFilter: state.searchFilter
     }

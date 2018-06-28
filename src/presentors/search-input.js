@@ -3,7 +3,7 @@ import { Component } from "react";
 import _ from "lodash";
 import {  Search  } from 'semantic-ui-react'
 import PropTypes from 'prop-types';
-import filterProjects from '../reducer/filter-projects'
+import filterProjects from '../pipes/filter-projects'
 
 class SearchInput extends Component {
 

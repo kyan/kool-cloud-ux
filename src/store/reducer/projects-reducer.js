@@ -1,4 +1,4 @@
-import ProjectConstants from "../constant/project"
+import ProjectConstants from "../../constant/project"
 
 export function projects(projects=[], action) {
   switch(action.type) {

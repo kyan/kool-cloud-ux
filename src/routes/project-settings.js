@@ -2,8 +2,8 @@ import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux"
 import { Dropdown, Modal, Button } from 'semantic-ui-react'
-import HeaderBar from "../partials/header-bar"
-import MastheadSmall from "../partials/masthead-small"
+import HeaderBar from "../presentors/header-bar"
+import MastheadSmall from "../presentors/masthead-small"
 
 class ProjectSettings extends Component {
 

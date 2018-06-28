@@ -1,6 +1,6 @@
 export default {
-  SIGNIN: "Session.SIGNIN",
+  SIGNIN_INPROGRESS: "Session.SIGNIN_INPROGRESS",
   SIGNED_IN: "Session.SIGNED_IN",
-  SIGNOUT: "Session.SIGNOUT",
+  SIGNOUT_INPROGRESS: "Session.SIGNOUT_INPROGRESS",
   SIGNED_OUT: "Session.SIGNED_OUT",
 }

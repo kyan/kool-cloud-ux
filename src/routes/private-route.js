@@ -1,7 +1,6 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 import store from '../store/store'
-
 const PrivateRoute = ({ component: Component, ...rest }) => {
 
   const isLoggedIn = () => {

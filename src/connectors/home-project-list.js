@@ -2,8 +2,8 @@ import React from "react";
 import { Component } from "react";
 import { Container } from 'semantic-ui-react'
 import { connect } from "react-redux"
-import ProjectsTable from "../component/projects-table"
-import SearchInput from "../component/search-input"
+import ProjectsTable from "../connectors/projects-table"
+import SearchInput from "../presentors/search-input"
 import setProjectFilterAction from "../signal/set-project-filter"
 
 class HomeProjectList extends Component {

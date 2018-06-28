@@ -1,6 +1,7 @@
 import React from "react";
 import { Table } from 'semantic-ui-react'
 import FadeIn from 'react-fade-in';
+
 export default function ProjectTableRow ({ viewProjectAction, project, users }) {
     const getUserOwner = (ownerid) => {
       return users.filter((user) => {
