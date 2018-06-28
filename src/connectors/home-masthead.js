@@ -16,8 +16,7 @@ class HomeMaskHead extends Component {
 export default connect(
   state => {
     return {
-      projects : state.projects,
-      searchFilter: state.searchFilter
+      session : state.session
     }
   }
 )(HomeMaskHead);

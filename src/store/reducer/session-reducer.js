@@ -12,12 +12,12 @@ const initialSession = {
 const session = function (state=initialSession, action) {
   switch(action.type) {
     case SessionConstants.SIGNED_INPROGRESS:
-    state = {...state, };
+      state = {...state, };
       break;
     case SessionConstants.SIGNED_IN:
       state = {...state, ...action.payload};
       break
-    case SessionConstants.SIGNED_OUT:
+    case SessionConstants.SIGN_OUT:
       state = {};
       break
     default:

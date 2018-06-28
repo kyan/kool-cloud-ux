@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Signin ({ session }) {
-
+export default function Signin ({ session, signIn }) {
+  
   return (
     <div>
       <div className="page-header logged-out">
         <div className="ui container grid">
           <div className="eight wide column signin-cloudlogo">
-            <img src="./css/themes/koolcapture/assets/images/logo.png" alt=""/>
+          <a href="/#"><img src="./css/themes/koolcapture/assets/images/logo.png" alt=""/></a>
           </div>
           <div className="eight wide column">
             <nav className="primary-nav">
@@ -24,7 +24,7 @@ export default function Signin ({ session }) {
       <div className="ui center aligned grid login-container">
         <div className="column login-box">
 
-          <form className="ui large form">
+          <div className="ui large form">
             <div className="ui segment">
               <h3>Sign in</h3>
               <div className="field">
@@ -39,7 +39,6 @@ export default function Signin ({ session }) {
               <div className="field">
                 <label>Password</label>
                 <div className="ui left icon input" data-tooltip="Incorrect Password or User" data-position="top center">
-                
                   <i className="lock icon inverted"></i>
                   <input type="password"  name="password"/>
                 </div>
@@ -47,10 +46,10 @@ export default function Signin ({ session }) {
               <div className="field">
                 <a href="#/signin" className="forgot-password-link">Forgot your password?</a>
               </div>
-              <button className="ui primary submit button">Login</button>
+              <button onClick={ signIn } className="ui primary submit button">Login</button>
             </div>
             <div className="ui error message"></div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

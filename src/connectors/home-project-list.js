@@ -27,6 +27,7 @@ class HomeProjectList extends Component {
 export default connect(
   state => {
     return {
+      sessions : state.sessions,
       projects : state.projects,
       searchFilter: state.searchFilter
     }
