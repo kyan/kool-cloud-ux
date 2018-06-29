@@ -2,11 +2,11 @@ import React from "react";
 import { connect } from "react-redux"
 import { signOutClick } from "../signal/session" 
 import { default as HeaderBarPresentor }  from "../presentors/header-bar"
-import { isLogged } from "../pipes/session"
+import { session } from "../pipes/session"
 
 const HeaderBar = function () {
   return (
-    <HeaderBarPresentor signedin={ isLogged() } signOut={ signOutClick() } /> 
+    <HeaderBarPresentor signedin={ session.signedIn } signOut={ signOutClick() } /> 
   )
 }
 

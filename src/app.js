@@ -1,6 +1,5 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import PrivateRoute from './routes/private-route'
 import Home from './routes/home'
 import Project from './routes/project'
 import ProjectSettings from './routes/project-settings'

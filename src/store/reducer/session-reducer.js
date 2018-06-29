@@ -6,19 +6,22 @@ const initialSession = {
     email: '',
   },
   jwt: null,
-  networkState: SessionConstants.SIGNIN_INPROGRESS
+  networkState: SessionConstants.SIGNED_OUT
 }
 
 const session = function (state=initialSession, action) {
   switch(action.type) {
     case SessionConstants.SIGNED_INPROGRESS:
-      state = {...state, };
+      state = {...state, networkState: SessionConstants.SIGNED_INPROGRESS};
       break;
     case SessionConstants.SIGNED_IN:
-      state = {...state, ...action.payload};
+      state = {...state, networkState: SessionConstants.SIGNED_IN, ...action.payload};
       break
     case SessionConstants.SIGN_OUT:
-      state = {};
+      state = { networkState: SessionConstants.SIGN_OUT};
+      break
+    case SessionConstants.SIGNIN_FAILED:
+      state = {...state,  networkState: SessionConstants.SIGNIN_FAILED, ...action.payload};
       break
     default:
   }

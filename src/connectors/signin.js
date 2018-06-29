@@ -1,18 +1,17 @@
 import React from "react";
 import { connect } from "react-redux"
 import { default as SignInPresentor }  from "../presentors/signin"
-import { isLogged } from "../pipes/session"
+import { session } from "../pipes/session"
 import { signIn } from "../thunk/session" 
-import store from "../store/store"
+import { dispatch } from "../store/store"
 
 const Signin = function () {
-  const signInClick = (e) => {
-    
-    store.dispatch(signIn({ user:'john'}));
+  const signInClick = (formInfo) => {
+    dispatch(signIn(formInfo));
   }
 
   return (
-    <SignInPresentor signedin={ isLogged() } signIn={ signInClick } /> 
+    <SignInPresentor errors={ session.errors } signedin={ session.signedIn } signIn={ signInClick } /> 
   )
 }
 

@@ -1,9 +1,21 @@
-import map from '../store/map'
+import { state } from '../store/store'
 
-export function isLogged() {
-  return !!map.session.jwt;
-}
+export const session = {
 
-export function networkState() {
-  console.log(map.session.networkState);
-}
+  get signedIn() {
+    return !!state().session.jwt;
+  },
+
+  get userName() {
+    return !!state().session.jwt;
+  },
+
+  get errors() {
+    return state().session.errors;
+  },
+
+  get networkState() {
+    return state().session.networkState;
+  },
+
+} 
