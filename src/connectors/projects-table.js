@@ -11,7 +11,7 @@ class ProjectsTable extends Component {
     return (projects) ? projects.map((project, index) => {
       return  (
         <ProjectTableRow className='ui celled table'
-          viewProjectAction={ changeLocation(`#/project/${project.id}`) }
+          viewProjectAction={ changeLocation(`#/project/show/${project.id}`) }
           project={ project }
           users={ this.props.projects }
           key={ index }
@@ -22,6 +22,7 @@ class ProjectsTable extends Component {
 
   render() {
     const {projects, searchFilter} = this.props;
+
     return (
       <Table >
         <Table.Header>

@@ -2,7 +2,7 @@ import React from "react";
 export default function HomeMasthead({signedin}) {
 
   const buttons = (signedin) ?
-    (<button  className="ui primary button new-project-button">New project</button>) :
+    (<a href="#/project/new"><button  className="ui primary button new-project-button">New project</button></a>) :
     (<div className="ui floating message">
       <a href="#/signin"><i className="user circle icon"></i>Sign In</a> <a href="#/signup"><i className="arrow circle right icon"></i>New to us? Sign Up</a>
     </div>);

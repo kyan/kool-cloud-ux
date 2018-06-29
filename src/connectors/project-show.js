@@ -18,7 +18,7 @@ class ProjectShow extends Component {
     const title = project ? project.title : 'loading' ;
     const description = project ? project.description : '' ;
 
-    const settingButton = (session.signedIn) ? (<a href='#/project-settings' onClick={ changeLocation(`#/project-settings/${this.props.projectid}`) } className="ui items add-user-link"><i className="edit icon"></i> Settings</a>) : null;
+    const settingButton = (session.signedIn) ? (<a href='#/project' onClick={ changeLocation(`#/project/edit/${this.props.projectid}`) } className="ui items add-user-link"><i className="edit icon"></i> Settings</a>) : null;
     return (
       <div className="page-header">
         <MastheadSmall pageTitle={title} title={title}/>
