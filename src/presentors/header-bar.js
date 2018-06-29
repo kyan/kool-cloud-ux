@@ -11,7 +11,7 @@ export default function HeaderBar ({signedin, signOut}) {
         <div className="ten wide column">
         <a href="/#"><img src="./css/themes/koolcapture/assets/images/logo.png" alt="" className="cloudlogo"/></a>
         </div>
-        <div className="two wide column">
+        <div className="six wide column">
           <nav className="primary-nav">      
             <a href="#signin" className="primary-nav-link"><i className="user circle icon"></i></a>
             {signedOutButton}

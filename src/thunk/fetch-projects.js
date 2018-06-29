@@ -12,6 +12,7 @@ export default function (dispatch, getState) {
           {
               id: "4567567883",
               title: "Fire Waltz",
+              description:"This is a short description of : Fire Waltz",
               image: faker.image.avatar(),
               ownerid: '1734568887567',
               status: "public",

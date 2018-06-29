@@ -10,6 +10,7 @@ export default function (dispatch, getState) {
           {
               id: "4567567883",
               title: "Fire Waltz",
+              description:"This is a short description of : Fire Waltz",
               image: faker.image.avatar(),
               ownerid: '1734568887567',
               status: "public",
@@ -18,6 +19,7 @@ export default function (dispatch, getState) {
           {
             id: "3456789",
             title: "Arrolla",
+            description:"This is a short description of : Arrolla",
             image: faker.image.avatar(),
             ownerid: '345678',
             members: [
@@ -39,6 +41,7 @@ export default function (dispatch, getState) {
           {
             id: "456783",
             title: "Lazlo",
+            description:"This is a short description of : Lazlo",
             image: faker.image.avatar(),
             ownerid: '17345678',
             members: [

@@ -6,8 +6,7 @@ export function signIn (signForm) {
     dispatch({ type: SessionConstants.SIGNIN_INPROGRESS });
     
     setTimeout(() => {
-      if (signForm.user==='joh') {
-        
+      if (signForm.user==='john') {
         const session= {
           user: {
             name:'John', 

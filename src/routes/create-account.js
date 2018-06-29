@@ -17,46 +17,46 @@ class CreateAccount extends Component {
           <div className="ui container">
           </div>
         </header>
-        <div class="ui middle aligned center aligned grid login-container">
-          <div class="column login-box register-box">
-            <h2 class="ui teal image header">
-              <div class="content">
+        <div className="ui middle aligned center aligned grid login-container">
+          <div className="column login-box register-box">
+            <h2 className="ui teal image header">
+              <div className="content">
                 Create your account
               </div>
             </h2>
-            <form class="ui large form">
-              <div class="ui stacked segment">
-                <div class="field">
+            <form className="ui large form">
+              <div className="ui stacked segment">
+                <div className="field">
                   <label>User Name</label>
-                  <div class="ui left icon input">
-                    <i class="user icon inverted"></i>
+                  <div className="ui left icon input">
+                    <i className="user icon inverted"></i>
                     <input type="text" name="username"/>
                   </div>
                 </div>
-                <div class="field">
+                <div className="field">
                   <label>E-mail address</label>
-                  <div class="ui left icon input ">
-                    <i class="mail icon inverted"></i>
+                  <div className="ui left icon input ">
+                    <i className="mail icon inverted"></i>
                     <input type="text" name="email" />
                   </div>
                 </div>
-                <div class="field">
+                <div className="field">
                   <label>Password</label>
-                  <div class="ui left icon input ">
-                    <i class="lock icon inverted"></i>
+                  <div className="ui left icon input ">
+                    <i className="lock icon inverted"></i>
                     <input type="password" name="password" />
                   </div>
                 </div>
-                <div class="field">
+                <div className="field">
                   <label>Confirm password</label>
-                  <div class="ui left icon input">
-                    <i class="lock icon inverted"></i>
+                  <div className="ui left icon input">
+                    <i className="lock icon inverted"></i>
                     <input type="password" name="confirm-pasword" />
                   </div>
                 </div>
-                <button class="ui primary submit button">Create Account</button>
+                <button className="ui primary submit button">Create Account</button>
               </div>
-              <div class="ui error message"></div>
+              <div className="ui error message"></div>
             </form>
           </div>
         </div>
