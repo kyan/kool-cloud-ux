@@ -5,11 +5,12 @@ import App from './app';
 import registerServiceWorker from './registerServiceWorker';
 import store from "./store/store"
 import init  from './thunk/init'
+store.dispatch(init);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
 
-store.dispatch(init);
+
 
 
   

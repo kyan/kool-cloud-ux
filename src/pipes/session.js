@@ -7,7 +7,7 @@ export const session = {
   },
 
   get userName() {
-    return !!state().session.jwt;
+    return state().session.user.name;
   },
 
   get errors() {

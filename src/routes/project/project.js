@@ -1,8 +1,9 @@
 import React from "react";
-import ProjectShow from '../connectors/project-show'
-import HeaderBar from "../connectors/header-bar"
+import ProjectShow from '../../connectors/project/project-show'
+import HeaderBar from "../../connectors/header-bar"
 
 export default function Project (props) {
+    
 
     return (
       <div>

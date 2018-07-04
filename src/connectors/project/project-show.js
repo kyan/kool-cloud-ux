@@ -1,22 +1,24 @@
 import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux"
-import Card from '../presentors/card'
-import MastheadSmall from "../presentors/masthead-small"
-import changeLocation from "../signal/change-location"
-import { session } from "../pipes/session"
+import MastheadSmall from "../../presentors/masthead-small"
+import changeLocation from "../../signal/change-location"
+import { session } from "../../pipes/session"
+import readProject from "../../thunk/projects/read-project"
+import { dispatch } from "../../store/store"
+
 class ProjectShow extends Component {
 
-  findProject(projectid) {
-    return this.props.projects.find((project) => {
-      return project.id === projectid;
-    });
+  componentWillMount() {
+    dispatch(readProject(this.props.projectid));
   }
 
   render() {
-    const project = this.findProject(this.props.projectid);
-    const title = project ? project.title : 'loading' ;
-    const description = project ? project.description : '' ;
+    const { project } = this.props;
+    
+    const title = (project) ? project.title : `loading ${this.props.projectid}`;
+
+    const description = (project) ? project.description : '' ;
 
     const settingButton = (session.signedIn) ? (<a href='#/project' onClick={ changeLocation(`#/project/edit/${this.props.projectid}`) } className="ui items add-user-link"><i className="edit icon"></i> Settings</a>) : null;
     return (
@@ -26,6 +28,7 @@ class ProjectShow extends Component {
           { settingButton }
           <h3>{title}</h3>
           <div>{description}</div>
+          {/*
           <h3>Film shots</h3>
           <div className="ui grid stackable shots-grid">
             <div className="four column row">
@@ -52,6 +55,7 @@ class ProjectShow extends Component {
               </div>
             </div>
           </div>
+            */}
         </div>
       </div>
     );
@@ -61,8 +65,6 @@ class ProjectShow extends Component {
 export default connect(
   state => {
   return {
-    users : state.users,
-    projects : state.projects,
-    searchFilter: state.searchFilter
+    project: state.activeProject
   }
 }, null)(ProjectShow);

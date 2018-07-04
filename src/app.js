@@ -1,11 +1,11 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './routes/home'
-import Project from './routes/project'
-import ProjectEdit from './routes/project-edit'
-import ProjectNew from './routes/project-new'
-import Signin from './routes/signin'
-import CreateAccount from './routes/create-account'
+import Project from './routes/project/project'
+import ProjectEdit from './routes/project/project-edit'
+import ProjectNew from './routes/project/project-new'
+import Signin from './routes/session/signin'
+import CreateAccount from './routes/session/create-account'
 import NotFound from './routes/404'
 import "./app.css"
 

@@ -6,7 +6,7 @@ import { session } from "../pipes/session"
 
 const HeaderBar = function () {
   return (
-    <HeaderBarPresentor signedin={ session.signedIn } signOut={ signOutClick() } /> 
+    <HeaderBarPresentor signedin={ session.signedIn } user={ session.userName } signOut={ signOutClick() } /> 
   )
 }
 

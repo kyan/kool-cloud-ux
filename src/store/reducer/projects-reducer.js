@@ -3,7 +3,7 @@ import SessionConstants from "../../constant/session"
 
 export function projects(projects=[], action) {
   switch(action.type) {
-    case ProjectConstants.READ:
+    case ProjectConstants.LISTED:
       projects = action.payload;
       break;
     case ProjectConstants.CREATED:
@@ -25,4 +25,14 @@ export function searchFilter (searchFilter='', action) {
     default:
   }
   return searchFilter;
+};
+
+export function activeProject (activeProject='', action) {
+  switch(action.type) {
+    case ProjectConstants.READ:
+      activeProject = action.payload;
+      break;
+    default:
+  }
+  return activeProject;
 };

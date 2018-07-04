@@ -3,7 +3,7 @@ import { Component } from "react";
 import _ from "lodash";
 import {  Search  } from 'semantic-ui-react'
 import PropTypes from 'prop-types';
-import filterProjects from '../pipes/filter-projects'
+
 
 class SearchInput extends Component {
 
@@ -17,13 +17,13 @@ class SearchInput extends Component {
 
   render () {
     const { searchFilter, data} = this.props;
-    const projects = filterProjects(searchFilter, data);
+
     
     return (
       <Search
         onResultSelect={this.resultSelectHandler}
         onSearchChange={_.debounce(this.searchChangeHandler, 50, { leading: true })}
-        results={ projects }
+        results={ data }
         value={searchFilter}
       />
     )

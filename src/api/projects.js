@@ -33,7 +33,7 @@ export function createProject (data, cb, error ) {
 
 export function readProject (id, cb, error) {
   client({
-    method: 'post',
+    method: 'get',
     url: addSessionParams(`/projects/${id}`)
   }).then(cb).catch(error);
 }
@@ -49,6 +49,6 @@ export function updateProject (id, data, cb, error) {
 export function deleteProject(cb, error, id) {
   client({
     method: 'delete',
-    url: addSessionParams(`/projects/${id}`),
+    url: addSessionParams(`/projects/${id}`)
   }).then(cb).catch(error);
 }

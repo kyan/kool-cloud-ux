@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux"
 import { Component } from "react";
 import { Table } from 'semantic-ui-react'
-import filterProjects from '../pipes/filter-projects'
-import ProjectTableRow from '../presentors/projects-table-row'
-import changeLocation from "../signal/change-location"
+import filterProjects from '../../pipes/filter-projects'
+import ProjectTableRow from '../../presentors/projects-table-row'
+import changeLocation from "../../signal/change-location"
+
 class ProjectsTable extends Component {
 
   rows(projects) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import CreateAccountConnector from "../connectors/create-account"
+import CreateAccountConnector from "../../connectors/session/create-account"
 
 
 class CreateAccount extends Component {

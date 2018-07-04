@@ -1,5 +1,6 @@
 export default {
-  CREATING: "ProjectConstant.CREATING",
+  LISTING: "ProjectConstant.LISTING",
+  LISTED: "ProjectConstant.LISTED",
   CREATED: "ProjectConstant.CREATED",
   READING: "ProjectConstant.READING",
   READ: "ProjectConstant.READ",

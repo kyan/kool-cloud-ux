@@ -91,6 +91,10 @@ $black            : #1B1C1D;
   animation: cloud-drift infinite 50s ease;
 }
 
+button.ui.primary.button.new-project-button {
+  background-color: #025fe2
+}
+
 .masthead {
   min-height: 245px;
   background: $blue;
@@ -107,8 +111,6 @@ $black            : #1B1C1D;
   min-height: 100px;
   margin-bottom: 4rem;
 }
-
-
 
 @media only screen and (max-width: 748px) {
   .cloud {

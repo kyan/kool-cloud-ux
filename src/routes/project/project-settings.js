@@ -2,23 +2,36 @@ import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux"
 import { Dropdown, Modal, Button } from 'semantic-ui-react'
-import HeaderBar from "../connectors/header-bar"
-import MastheadSmall from "../presentors/masthead-small"
+import HeaderBar from "../../connectors/header-bar"
+import MastheadSmall from "../../presentors/masthead-small"
 
+class ProjectSettings extends Component {
 
-class ProjectNew extends Component {
+  constructor() {
+    super();
+    this.state={ acceptRequestModal: false};
+  }
+
+  findProject(projectid) {
+    return this.props.projects.find((project) => {
+      return project.id === projectid;
+    });
+  }
 
   render() {
-    
+    const project = this.findProject(this.props.match.params.id);
+    const title = project ? project.title : 'loading' ;
+
+    const { acceptRequestModal } = this.state;
     return (
         <div>
           <div className="page-header">
             <HeaderBar />
-            <MastheadSmall pageTitle='New Project' title='New Project'/>
+            <MastheadSmall pageTitle={title} title={title}/>
           </div>
           <form action="" className="ui form container grid">
             <div className="ui six wide column">
-              <h3>New project</h3>
+              <h3>Modify project</h3>
               
               <div className="field">
                 <label>Project name</label>
@@ -99,7 +112,7 @@ class ProjectNew extends Component {
               </div>
             </div>
           </form>
-          <Modal dimmer='blurring' open={false} onClose={this.close}>
+          <Modal dimmer='blurring' open={acceptRequestModal} onClose={this.close}>
           <Modal.Header>Accept Request</Modal.Header>
           <Modal.Content image>
             <Modal.Description>
@@ -131,4 +144,4 @@ export default connect(
     projects : state.projects,
     searchFilter: state.searchFilter
   }
-}, null)(ProjectNew);
+}, null)(ProjectSettings);
