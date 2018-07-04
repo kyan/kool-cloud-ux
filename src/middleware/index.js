@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 // import { createLogger } from 'redux-logger'
 import apiMiddleware from "./api"
 
-const errorMiddleWare = (store) => (next) => (action) => {
+const errorMiddleWare = (store) => (next) => (action) => {  
   if(!action.type) {
     throw new Error("action.type cannot be undefined");
   }

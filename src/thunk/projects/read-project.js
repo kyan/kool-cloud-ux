@@ -2,7 +2,7 @@ import ProjectConstants from "../../constant/project"
 import { readProject }  from '../../api/projects';
 
 export default function (id) {
-  (dispatch, getState) => {
+  return (dispatch, getState) => {
     dispatch({ type: ProjectConstants.READING });
   
     readProject(
