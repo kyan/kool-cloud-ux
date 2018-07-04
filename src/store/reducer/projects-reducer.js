@@ -1,17 +1,17 @@
 import ProjectConstants from "../../constant/project"
 import SessionConstants from "../../constant/session"
 
-
 export function projects(projects=[], action) {
   switch(action.type) {
-    case ProjectConstants.FETCHED:
+    case ProjectConstants.READ:
       projects = action.payload;
       break;
     case ProjectConstants.CREATED:
       projects = [...projects, action.payload];
       break;
-    case SessionConstants.SIGN_OUT:
+    case SessionConstants.SIGNED_OUT:
       projects = [projects[0]];
+      break;
     default:
   }
   return projects;

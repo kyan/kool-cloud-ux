@@ -17,7 +17,7 @@
   margin-top: -246px; }
 
 .register-box {
-  margin-top: -337px; }
+  margin-top: -259px; }
 
 .signin-cloudlogo > img {
   width: 250px !important; }
@@ -37,6 +37,9 @@
 .ui.primary.button {
   min-width: 15px; }
 
+.ui.grid {
+  min-width: 372px; }
+
 .ui.grid > .row > .column {
   margin-bottom: 10px; }
 
@@ -51,9 +54,19 @@
   top: 65px;
   animation: cloud-drift infinite 50s ease; }
 
-.masthead h1 {
-  font-size: 40px;
-  color: #FFFFFF; }
+.masthead {
+  min-height: 245px;
+  background: #408AF3;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2rem; }
+  .masthead h1 {
+    font-size: 40px;
+    color: #FFFFFF; }
+
+.masthead.small {
+  min-height: 100px;
+  margin-bottom: 4rem; }
 
 @media only screen and (max-width: 748px) {
   .cloud {
@@ -63,7 +76,7 @@
   .cloudlogo {
     width: 90%; }
   .masthead {
-    min-height: 324px; } }
+    min-height: 265px; } }
 
 @media only screen and (max-width: 748px) {
   .ui.container {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="177px" height="50px" viewBox="0 0 177 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>KoolCloud</title>
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -8,7 +9,7 @@
             <g id="Header">
                 <g id="logo" transform="translate(190.000000, 17.000000)">
                     <text id="KoolCloud" font-family="PollyRounded-Bold, Polly Rounded" font-size="22" font-weight="bold" fill="#000000">
-                        <tspan x="66" y="33">Kool Cloud</tspan>
+                        <tspan x="66" y="33">KoolCloud</tspan>
                     </text>
                     <rect id="Rectangle-2" fill="#408AF3" x="0" y="0" width="50" height="50" rx="6"></rect>
                     <path d="M34.762617,34 L34.7873039,33.9997264 C37.1236837,33.9738302 39,32.1076187 39,29.8214286 C39,29.2597396 38.8874605,28.7151521 38.6716,28.2095725 L38.5298414,27.8775514 L38.6328623,27.5315454 C38.8754706,26.7167217 39,25.8670722 39,25 C39,20.0330504 34.9019004,16 29.8387097,16 C26.579048,16 23.6192977,17.6850084 21.9747856,20.3800711 L21.6130805,20.9728415 L20.931299,20.8410028 C20.6601275,20.7885653 20.3824917,20.7619048 20.1008065,20.7619048 C17.8297632,20.7619048 15.9650679,22.5067194 15.8448822,24.7131716 L15.7971975,25.5886007 L14.9230527,25.6558371 C12.7131985,25.825812 11,27.640482 11,29.8214286 C11,32.0717451 12.8201347,33.9210384 15.1139751,33.9975345 L15.1879068,34 L34.762617,34 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="2"></path>

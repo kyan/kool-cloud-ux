@@ -1,14 +1,12 @@
-import SessionConstants from "../constant/session"
-import store from "../store/store"
 
-export function signOutClick(filterValue) {
+import store from "../store/store"
+import signOut from "../thunk/session/signOut"
+
+export function signOutClick() {
   return ((e) => {
-    store.dispatch({
-      type: SessionConstants.SIGN_OUT
-    });
+    store.dispatch(signOut);
     e.preventDefault();
-  })
-  
+  }) 
 }
 
 

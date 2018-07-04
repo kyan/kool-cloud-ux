@@ -17,11 +17,13 @@ class SearchInput extends Component {
 
   render () {
     const { searchFilter, data} = this.props;
+    const projects = filterProjects(searchFilter, data);
+    
     return (
       <Search
         onResultSelect={this.resultSelectHandler}
         onSearchChange={_.debounce(this.searchChangeHandler, 50, { leading: true })}
-        results={ filterProjects(searchFilter, data) }
+        results={ projects }
         value={searchFilter}
       />
     )

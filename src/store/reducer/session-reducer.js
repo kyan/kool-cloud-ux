@@ -2,6 +2,7 @@ import SessionConstants from "../../constant/session"
 
 const initialSession = {
   user: { 
+    id:'', 
     name:'', 
     email: '',
   },
@@ -17,8 +18,8 @@ const session = function (state=initialSession, action) {
     case SessionConstants.SIGNED_IN:
       state = {...state, networkState: SessionConstants.SIGNED_IN, ...action.payload};
       break
-    case SessionConstants.SIGN_OUT:
-      state = { networkState: SessionConstants.SIGN_OUT};
+    case SessionConstants.SIGNED_OUT:
+      state = {...state, ...action.payload,  networkState: SessionConstants.SIGN_OUT};
       break
     case SessionConstants.SIGNIN_FAILED:
       state = {...state,  networkState: SessionConstants.SIGNIN_FAILED, ...action.payload};

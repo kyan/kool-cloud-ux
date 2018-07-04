@@ -1,3 +1,18 @@
+
+$red              : #DB2828;
+$orange           : #F2711C;
+$yellow           : #FBBD08;
+$olive            : #B5CC18;
+$green            : #21BA45;
+$teal             : #00B5AD;
+$blue             : #408AF3;
+$violet           : #6435C9;
+$purple           : #A333C8;
+$pink             : #E03997;
+$brown            : #A5673F;
+$grey             : #767676;
+$black            : #1B1C1D;
+
 @media only screen and (max-width: 764px) {
   .cloud {
     position: absolute;
@@ -27,7 +42,7 @@
 }
 
 .register-box {
-  margin-top: -337px;
+  margin-top: -259px;
 }
 
 .signin-cloudlogo>img {
@@ -54,6 +69,10 @@
   min-width: 15px;
 }
 
+.ui.grid {
+  min-width: 372px;
+}
+
 .ui.grid>.row>.column {
   margin-bottom: 10px;
 }
@@ -73,11 +92,23 @@
 }
 
 .masthead {
+  min-height: 245px;
+  background: $blue;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2rem;
   h1 {
     font-size: 40px;
     color: #FFFFFF;
   }
 }
+
+.masthead.small {
+  min-height: 100px;
+  margin-bottom: 4rem;
+}
+
+
 
 @media only screen and (max-width: 748px) {
   .cloud {
@@ -91,7 +122,7 @@
   }
 
   .masthead {
-    min-height: 324px;
+    min-height: 265px;
   }
 }
 

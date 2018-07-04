@@ -1,5 +1,4 @@
 import React from "react";
-import FadeIn from 'react-fade-in';
 
 class Signin extends React.Component {
   submitClick = () => {
@@ -44,9 +43,6 @@ class Signin extends React.Component {
 
   render() {
     const { errors } = this.props;
-    console.log('errors ', errors)
-
-
     return (
       <div>
         <div className="page-header logged-out">
@@ -71,7 +67,7 @@ class Signin extends React.Component {
 
             <div className="ui large form">
               <div className="ui segment">
-                <h3>Sign in</h3>
+                <h3>Sign in { errors && (<a className="ui red tag label">{ errors.flash}</a>) }</h3>
                 { this.userInput(errors) }
                 { this.passwordInput(errors) }
                 <div className="field">
