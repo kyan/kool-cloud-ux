@@ -18,7 +18,6 @@ class SearchInput extends Component {
   render () {
     const { searchFilter, data} = this.props;
 
-    
     return (
       <Search
         onResultSelect={this.resultSelectHandler}

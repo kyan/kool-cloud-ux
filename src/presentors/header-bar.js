@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HeaderBar ({signedin, user, signOut}) {
   const signedOutButton = (signedin) ?
-    (<a tooltip="sign out" href="#signout" onClick={signOut} className="primary-nav-link"><i className="sign out icon" ></i></a>) 
+    (<a tooltip="sign out" href="#signout" onClick={signOut} className="primary-nav-link">{user}<i className="sign out icon" ></i></a>) 
     : null;
 
   const signedInButton = (!signedin) && (<a href="#signin" className="primary-nav-link"><i className="user circle icon"></i></a>);

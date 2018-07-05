@@ -1,34 +1,46 @@
 import ProjectConstants from "../../constant/project"
 import { createProject }  from '../../api/projects';
+import { dispatch } from '../../store/store';
+export default function create () {
+  dispatch (function(dispatch, getState) {
+    dispatch({ type: ProjectConstants.CREATING });
+    
+    const project = getState().activeProject
 
-export default function (dispatch, getState) {
-  dispatch({ type: ProjectConstants.CREATING });
-  console.log('creating project');
+    if(!project.title || !project.description) {
+      dispatch({
+        type: ProjectConstants.CREATE_FAILED,
+        payload: { header: 'Incomplete', message: 'Project name and description needed'}
+      });
+      return
+    }
 
-  const formData = {
-    'title': 'My new film',
-    'description': 'my new film description',
-    'status': 'private'
-  }
-  
-
-  createProject(
-    req => {
-      console.log(req.data);
-      if(req.data.error) {
-        console.log('API Error: ', req.data.error);
+    createProject(
+      project,
+      req => {
+        if (req.data.error) {
+          dispatch({
+              type: ProjectConstants.CREATE_FAILED,
+              payload: { header: 'Error ', message: req.data.error} 
+          });
+          return;
+        }
+        dispatch(
+          {
+            type: ProjectConstants.CREATED,
+            payload: req.data.project
+          }
+        );
+        window.location=`#/project/show/${req.data.project.id}`
+      },
+      (error)=> {
+        debugger
+        dispatch({
+            type: ProjectConstants.CREATE_FAILED,
+            payload: { header: 'Network Failure ', message: error} 
+        });
       }
-      // dispatch(
-      //   {
-      //     type: ProjectConstants.CREATED,
-      //     payload: req.data
-      //   }
-      // );
-    },
-    (error)=> {
-      console.log('createProject error : ', error)
-    },
-    formData
-  )
+    )
+  });
 }
 

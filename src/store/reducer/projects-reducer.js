@@ -3,11 +3,11 @@ import SessionConstants from "../../constant/session"
 
 export function projects(projects=[], action) {
   switch(action.type) {
-    case ProjectConstants.LISTED:
-      projects = action.payload;
-      break;
     case ProjectConstants.CREATED:
       projects = [...projects, action.payload];
+      break;
+    case ProjectConstants.LISTED:
+      projects = action.payload;
       break;
     case SessionConstants.SIGNED_OUT:
       projects = [projects[0]];
@@ -27,10 +27,29 @@ export function searchFilter (searchFilter='', action) {
   return searchFilter;
 };
 
-export function activeProject (activeProject='', action) {
+export function projectCreationState (creationProjectError={}, action) {
+  switch(action.type) {
+    case ProjectConstants.CREATING:
+      creationProjectError = { type: action.type };
+      break;
+    case ProjectConstants.CREATE_FAILED:
+      creationProjectError = { type: action.type, message: action.payload};
+      break;  
+    case ProjectConstants.CREATED:
+      creationProjectError = { type: action.type };
+      break;
+    default:
+  }
+  return creationProjectError;
+};
+
+export function activeProject (activeProject={}, action) {
   switch(action.type) {
     case ProjectConstants.READ:
       activeProject = action.payload;
+      break;
+    case ProjectConstants.MODIFY:
+      activeProject = { ...activeProject, ...action.payload };
       break;
     default:
   }
