@@ -38,10 +38,10 @@ export function readProject (id, cb, error) {
   }).then(cb).catch(error);
 }
 
-export function updateProject (id, data, cb, error) {
+export function updateProject (data, cb, error) {
   client({
     method: 'put',
-    url: addSessionParams(`/projects/${id}`),
+    url: addSessionParams(`/projects/${data.id}`),
     data
   }).then(cb).catch(error);
 }

@@ -1,8 +1,7 @@
 import React from "react";
-
-import { Dropdown, Input, TextArea, Modal, Message } from 'semantic-ui-react'
-import HeaderBar from "../connectors/header-bar"
-import MastheadSmall from "../presentors/masthead-small"
+import { Dropdown, TextArea, Modal, Message } from 'semantic-ui-react'
+import HeaderBar from "../../connectors/header-bar"
+import MastheadSmall from "../../presentors/masthead-small"
 
 export default class ProjectEdit extends React.Component {
 
@@ -10,10 +9,9 @@ export default class ProjectEdit extends React.Component {
     if(!status) {
       status = this.status.getSelectedItem().value
     }
-
     this.props.onChange(
       {
-        title: this.projectName.inputRef.value,
+        title: this.projectName.value,
         description: this.description.ref.value,
         status
       }
@@ -33,19 +31,16 @@ export default class ProjectEdit extends React.Component {
   }
 
   render() {
-    const {flash, project : {title, description, status}, loading} = this.props;
+    const {submitTitle, pageTitle, flash, project : {title, description, status}, loading} = this.props;
     const defaultStatus = status ? status: "private";
-    const createTitle = 'Create Project';
-    
     return (
       <div>
         <div className="page-header">
           <HeaderBar />
-          <MastheadSmall title={ createTitle }/>
+          <MastheadSmall title={ pageTitle }/>
         </div>
         <div className="ui stackable form container grid">
           <div className="ui eight wide column">
-            
             { !!flash && (
               <Message negative
                 onDismiss={this.handleDismiss}
@@ -53,11 +48,10 @@ export default class ProjectEdit extends React.Component {
                 content={ flash.message }
               />
             )}
-            <h3>{ createTitle }</h3>
-            
+            <h3>{ pageTitle }</h3>
             <div className="field">
               <label>Name</label>
-              <Input ref={c => { this.projectName = c } } onChange={ this.onChange.bind(this) } defaultValue={title} placeholder="Enter Text"/>
+              <input key={pageTitle}  ref={c => { this.projectName = c } } onChange={ this.onChange.bind(this) } defaultValue={title} placeholder="Enter Text"/>
             </div>
 
             <div className="fields">
@@ -71,14 +65,14 @@ export default class ProjectEdit extends React.Component {
             </div>
             <div className="field">
               <label>Description</label>
-              <TextArea rows={10} ref={c => { this.description = c } } placeholder="Enter Text" onChange={ this.onChange } value={ description }/>
+              <TextArea key={pageTitle} rows={10} ref={c => { this.description = c } } placeholder="Enter Text" onChange={ this.onChange } value={ description }/>
             </div>
             <div className="ui active field right aligned">
-              <button onClick={ this.onSubmit } className="ui submit primary button">Create</button>              
+              <button onClick={ this.onSubmit } className="ui submit primary button">{submitTitle}</button>              
             </div>  
           </div>
-          <div className="ui eight wide column">
           {/*
+          <div className="ui eight wide column">
           <div className="ui segment">
               <h4>Shared with   
                 <SearchInput 
@@ -130,9 +124,9 @@ export default class ProjectEdit extends React.Component {
               </div>
             </div>
             
-          */}
        
           </div>
+          */}
           </div> 
           <Modal open={loading } dimmer='inverted'>
             <Modal.Header></Modal.Header>

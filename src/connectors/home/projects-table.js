@@ -3,16 +3,21 @@ import { connect } from "react-redux"
 import { Component } from "react";
 import { Table } from 'semantic-ui-react'
 import filterProjects from '../../pipes/filter-projects'
-import ProjectTableRow from '../../presentors/projects-table-row'
+import ProjectTableRow from '../../presentors/home/projects-table-row'
 import changeLocation from "../../signal/change-location"
 
 class ProjectsTable extends Component {
 
   rows(projects) {
     return (projects) ? projects.map((project, index) => {
+      const actions = {
+        view: changeLocation(`#/project/show/${project.id}`),
+        edit: changeLocation(`#/project/edit/${project.id}`)
+      }
+
       return  (
         <ProjectTableRow className='ui celled table'
-          viewProjectAction={ changeLocation(`#/project/show/${project.id}`) }
+          actions={ actions }
           project={ project }
           users={ this.props.projects }
           key={ index }
@@ -25,14 +30,14 @@ class ProjectsTable extends Component {
     const {projects, searchFilter} = this.props;
 
     return (
-      <Table >
+      <Table basic='very' celled >
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell >Project</Table.HeaderCell>
-            <Table.HeaderCell>Owner</Table.HeaderCell>
-            <Table.HeaderCell>Role</Table.HeaderCell>
+            <Table.HeaderCell >Project </Table.HeaderCell>
+            <Table.HeaderCell>Owner  </Table.HeaderCell>
+            <Table.HeaderCell>Role </Table.HeaderCell>
+            <Table.HeaderCell>Status </Table.HeaderCell>
             <Table.HeaderCell>Actions</Table.HeaderCell>
-            <Table.HeaderCell>Notifications</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>

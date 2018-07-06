@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './routes/home'
-import Project from './routes/project/project'
+import ProjectShow from './routes/project/project-show'
 import ProjectEdit from './routes/project/project-edit'
 import ProjectNew from './routes/project/project-new'
 import Signin from './routes/session/signin'
@@ -15,7 +15,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={ Home }/>
         <Route path="/project/new" component={ ProjectNew } />
-        <Route path="/project/show/:id" component={ Project } />
+        <Route path="/project/show/:id" component={ ProjectShow } />
         <Route path="/project/edit/:id" component={ProjectEdit} />
         <Route path="/signin" component={Signin} />
         <Route path="/create-account" component={CreateAccount} />

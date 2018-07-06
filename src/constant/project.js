@@ -7,11 +7,12 @@ export default {
   READING: "ProjectConstant.READING",
   READ: "ProjectConstant.READ",
   UPDATING: "ProjectConstant.UPDATING",
+  UPDATE_FAILED: "ProjectConstant.UPDATE_FAILED",
   UPDATED: "ProjectConstant.UPDATED",
   DELETING: "ProjectConstant.DELETING",
   DELETED: "ProjectConstant.DELETED",
-  MODIFY: "ProjectConstant.MODIFY",
   
+  MODIFY: "ProjectConstant.MODIFY",
   SET_SEARCH_FILTER: "ProjectConstant.SET_SEARCH_FILTER",
   SELECT: "ProjectConstant.SELECT",
   SELECT_PROJECT: "ProjectConstant.SELECT_PROJECT",

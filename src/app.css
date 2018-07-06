@@ -48,6 +48,9 @@
   background: #f5f7ff !important;
   color: #408af3 !important; }
 
+.ui.form {
+  font-size: 14px; }
+
 .cloud {
   position: absolute;
   right: 140px;

@@ -1,22 +1,12 @@
 import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux"
-import { default as ProjectEditPresentor }  from "../../presentors/project-edit"
-import { init } from "../../signal/project"
+import { default as ProjectEditPresentor }  from "../../presentors/project/project-edit"
 import { modify } from "../../signal/project"
 import createProject from "../../thunk/projects/create-project"
 import ProjectConstants from '../../constant/project';
 
 class ProjectNew extends Component {
-
-  componentWillMount() {
-    init(
-      { title: '',
-        description: '',
-        status: 'private'
-      }
-    )
-  }
 
   onChange = (data) => {
     modify(data)
@@ -39,7 +29,7 @@ class ProjectNew extends Component {
   render() {
     const { project, projectCreationState } = this.props;
     return (
-      <ProjectEditPresentor title='New project' project= {project} onSubmit={ this.onSubmit } onChange={ this.onChange } loading={ this.isLoading(projectCreationState) } flash={ this.flashMessage(projectCreationState) } />
+      <ProjectEditPresentor submitTitle='Create' pageTitle='New project' project={project} onSubmit={ this.onSubmit } onChange={ this.onChange } loading={ this.isLoading(projectCreationState) } flash={ this.flashMessage(projectCreationState) } />
     );
   }
 }

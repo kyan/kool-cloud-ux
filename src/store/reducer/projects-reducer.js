@@ -27,20 +27,10 @@ export function searchFilter (searchFilter='', action) {
   return searchFilter;
 };
 
-export function projectCreationState (creationProjectError={}, action) {
-  switch(action.type) {
-    case ProjectConstants.CREATING:
-      creationProjectError = { type: action.type };
-      break;
-    case ProjectConstants.CREATE_FAILED:
-      creationProjectError = { type: action.type, message: action.payload};
-      break;  
-    case ProjectConstants.CREATED:
-      creationProjectError = { type: action.type };
-      break;
-    default:
-  }
-  return creationProjectError;
+export function projectCreationState (creationProjectState={}, action) {
+  
+  creationProjectState = { type: action.type, message: action.payload };
+  return creationProjectState;
 };
 
 export function activeProject (activeProject={}, action) {
@@ -53,5 +43,6 @@ export function activeProject (activeProject={}, action) {
       break;
     default:
   }
+
   return activeProject;
 };

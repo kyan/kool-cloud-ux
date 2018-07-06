@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux"
-import { default as CreateAccountPresentor }  from "../../presentors/create-account"
+import { default as CreateAccountPresentor }  from "../../presentors/session/create-account"
 
 const CreateAccount = function () {
   return (

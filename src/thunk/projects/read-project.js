@@ -3,8 +3,9 @@ import { readProject }  from '../../api/projects';
 
 export default function (id) {
   return (dispatch, getState) => {
+
     dispatch({ type: ProjectConstants.READING });
-  
+    
     readProject(
       id,
       req => {
@@ -30,7 +31,7 @@ export default function (id) {
         dispatch(
           {
             type: ProjectConstants.READ,
-            payload: { title: error.message }
+            payload: { error: error.message }
           }
         );
         console.log('createProject error : ', error)
