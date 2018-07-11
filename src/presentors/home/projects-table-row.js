@@ -30,7 +30,7 @@ export default function ProjectTableRow ({ actions, project, users }) {
               createActionIcon(
                 rights.canCreateShots,
                 'keyCreateShots', 
-                actions.edit,
+                actions.view,
                 'video',
                 'create shot')
             ]);

@@ -29,6 +29,7 @@ class ProjectEdit extends Component {
 
   render() {
     const { project, projectCreationState } = this.props;
+    
     return (
       <ProjectEditPresentor submitTitle='Modify' pageTitle='Modify project' project= {project} onSubmit={ this.onSubmit } onChange={ this.onChange } loading={ this.isLoading(projectCreationState) } flash={ this.flashMessage(projectCreationState) } />
     );

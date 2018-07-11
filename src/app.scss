@@ -37,6 +37,11 @@ $black            : #1B1C1D;
   color:#ffffff!important;
 }
 
+.user-label {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .login-box {
   margin-top: -246px;
 }
@@ -56,6 +61,13 @@ $black            : #1B1C1D;
 .ui.form input[type=text], .ui.form input[type=text]:focus {
   color: #ffffff;
 }
+
+.ui.selection.dropdown {
+  min-height: 0.526786em;
+  padding: .4875em 1.975em .6875em .875em;
+  min-width: 4em;
+}
+
 
 .ui.input.error>input {
   background-color: #e77c7c!important;

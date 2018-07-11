@@ -3,54 +3,29 @@ import { Component } from "react";
 import { connect } from "react-redux"
 import MastheadSmall from "../../presentors/masthead-small"
 import changeLocation from "../../signal/change-location"
-import { session } from "../../pipes/session"
+import ShotList from "../../presentors/shot/shot-list"
+import MemberList from "../../presentors/member/member-list"
 
 class ProjectShow extends Component {
-
-  
-
   render() {
     const { project } = this.props;
-    const title = (project) ? project.title : `loading ${this.props.projectid}`;
-    const description = (project) ? project.description : '' ;
+    const title = (project) && project.title;
+    const description = (project) && project.description ;
+    const editButton = (project.rights && project.rights.canEditProject) ? (<a href='#/project' onClick={ changeLocation(`#/project/edit/${this.props.projectid}`) } className="ui items add-user-link"><i className="edit icon"></i> Edit Project</a>) : null;
+    const canCreateShots= (project.rights && project.rights.canCreateShots) 
 
-    const editButton = (session.signedIn) ? (<a href='#/project' onClick={ changeLocation(`#/project/edit/${this.props.projectid}`) } className="ui items add-user-link"><i className="edit icon"></i> Edit</a>) : null;
     return (
       <div className="page-header">
         <MastheadSmall pageTitle={title} title={title}/>
         <div className="ui form container ">
-          { editButton }
-          <h3>{title}</h3>
+        { editButton }
+          <h3>{title} </h3>
           <div>{description}</div>
-          {/*
-          <h3>Film shots</h3>
-          <div className="ui grid stackable shots-grid">
-            <div className="four column row">
-              <div className="ui column">
-                <Card/>
-              </div>
-              <div className="ui column">
-                <Card/>
-              </div>
-              <div className="ui column">
-                <Card/>
-              </div>
-              <div className="ui column">
-                <Card/>
-              </div>
-              <div className="ui four column">
-                <Card/>
-              </div>
-              <div className="ui four column">
-                <Card/>
-              </div>
-              <div className="ui four column">
-                <Card/>
-              </div>
-            </div>
-          </div>
-            */}
+          <MemberList members={ project.members } />
+          <h3>Shots</h3>
+          <ShotList shots={ project.shots } canCreateShots={canCreateShots} projectid={ project.id }/>
         </div>
+          
       </div>
     );
   }
@@ -59,6 +34,7 @@ class ProjectShow extends Component {
 export default connect(
   state => {
   return {
-    project: state.activeProject
+    project: state.activeProject,
+    projectCreationState: state.projectCreationState
   }
 }, null)(ProjectShow);
