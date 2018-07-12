@@ -1,10 +1,16 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-export default function ShotCard ({shot}) {
+export default function ShotCard ({shot, editable}) {
     const editShot = (e) => {
       window.location = `#/shot/edit/345678`
     }
+
+    const editableButton = () => 
+    editable && (<div onClick={editShot} disabled className="tiny ui button">
+            <i className="icon edit"></i>
+          </div>)
+    
 
     return (
       <div className="ui card">
@@ -17,9 +23,7 @@ export default function ShotCard ({shot}) {
         </div>
 
         <div className="ui two bottom attached buttons">
-          <div onClick={editShot} className="tiny ui button">
-            <i className="icon edit"></i>
-          </div>
+          { editableButton() }
           <div className="tiny ui button ">
           <i className="play icon"></i>
           </div>

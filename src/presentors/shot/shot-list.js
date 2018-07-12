@@ -14,12 +14,14 @@ export default function ShotList({ shots, canCreateShots, projectid }) {
             shots.map(function(shot, index) {
               return (
                 <div key={index} className="ui column">
-                  <ShotCard shot={shot} /> 
+                  <ShotCard shot={shot} editable={ canCreateShots } /> 
                 </div>
               )
             })
           }
-        { canCreateShots &&  <div  className="ui column"><CreateShotCard projectid={projectid}/></div> }
+        { canCreateShots &&  <div  className="ui column">
+          <CreateShotCard projectid={projectid}/>
+          </div> }
         { !canCreateShots && (shots.length===0) && 'No Shot have been created for this project, yet.'}
         </div>
       </div>

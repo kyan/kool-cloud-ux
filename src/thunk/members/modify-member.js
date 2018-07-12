@@ -12,7 +12,6 @@ export default function modifyMember (modifiedMember) {
             (modifiedMember.userid === member.userid) ?
             { ...modifiedMember } :
             { ...member }
-            
           )
         }
       );

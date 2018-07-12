@@ -12,6 +12,7 @@ export default function filterUsers() {
       description: user.email
     }
   }).filter((user) => {
+    if (!members) return true
      const memberExists = members.find((member) => {
       return (member.userid === user.id)
     })
