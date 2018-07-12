@@ -22,7 +22,7 @@ export default function MemberListEdit({ members }) {
       </Grid>
       <div className="ui divider"></div>
       { members.map (
-          (member, index) => <MemberEditable key={index}member={ member } />
+          (member, index) => <MemberEditable key={index} member={ member } />
         )
       }
     </div>

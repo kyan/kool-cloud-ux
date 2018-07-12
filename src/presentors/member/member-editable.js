@@ -1,15 +1,20 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { Dropdown } from 'semantic-ui-react'
+import deleteMember from '../../thunk/members/delete-member'
+import modifyMember from '../../thunk/members/modify-member'
 
 export default class MemberListEdit extends React.Component {
 
   deleteUser = (e) => {
-    console.log('deleteUser', this.props.member)
+    deleteMember(this.props.member)
   }
 
-  onChange = () => {
-    console.log('onChange');
+  onChange = (value, selItem ) => {
+    modifyMember({
+      ...this.props.member,
+      role: selItem.value
+    });
   }
 
   render() {
@@ -19,7 +24,7 @@ export default class MemberListEdit extends React.Component {
       (<i className="certificate icon"></i>)
 
     const dropdown = (member.role !== 'owner') ?
-      (<Dropdown onChange={ this.onChange } placeholder='Role' value={ member.role } selection options={
+      (<Dropdown ref={c => { this.status = c } } onChange={ this.onChange } placeholder='Role' value={ member.role } selection options={
       [
         { key: 1, text: 'Animator', value: 'animator' },
         { key: 2, text: 'Critic', value: 'critic' },
