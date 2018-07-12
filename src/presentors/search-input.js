@@ -4,11 +4,10 @@ import _ from "lodash";
 import {  Search  } from 'semantic-ui-react'
 import PropTypes from 'prop-types';
 
-
 class SearchInput extends Component {
 
   resultSelectHandler = (e, { result }) => {
-    this.props.setFilterAction(result.title);
+    this.props.onSelect(result);
   }
 
   searchChangeHandler = (e, { value }) => {
@@ -33,6 +32,7 @@ SearchInput.propTypes = {
   data: PropTypes.array,
   searchFilter: PropTypes.string,
   setFilterAction: PropTypes.func,
+  onSelect: PropTypes.func,
 };
 
 export default SearchInput;

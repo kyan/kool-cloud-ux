@@ -3,15 +3,15 @@ import React from "react";
 class Signin extends React.Component {
   submitClick = () => {
     this.props.signIn({
-      user: this.refs.email.value,
+      name: this.refs.email.value,
       password: this.refs.password.value,
     })
   }
 
   userInput(errors){
-    const hasError = (errors) ? !!errors.user : false;
+    const hasError = (errors) ? !!errors.name : false;
     const errorIcon = (hasError) ? ( <div className="floating ui red label"><i className="exclamation triangle icon"></i></div>) : null;
-    const tooltip = (hasError) ? ( errors.user ) : null;
+    const tooltip = (hasError) ? ( errors.name ) : null;
     
     return(
       <div className="field">
@@ -67,7 +67,7 @@ class Signin extends React.Component {
 
             <div className="ui large form">
               <div className="ui segment">
-                <h3>Sign in { errors && (<a className="ui red tag label">{ errors.flash}</a>) }</h3>
+                <h3>Sign in { errors && (<a className="ui red tag label">{ errors.flash }</a>) }</h3>
                 { this.userInput(errors) }
                 { this.passwordInput(errors) }
                 <div className="field">

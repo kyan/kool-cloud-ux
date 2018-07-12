@@ -9,20 +9,22 @@ import filterProjects from '../../pipes/filter-projects'
 class HomeProjectList extends Component {
 
   render () {
-    const { searchFilter, projects } = this.props;
-
+    const { searchFilter } = this.props;
+    const selectProject = (project) => {
+      setProjectFilterAction(project.title)
+    }
     return (
       <Container>
         <SearchInput 
           searchFilter={ searchFilter }
-          data={ filterProjects(searchFilter, projects) }
+          data={ filterProjects() }
           setFilterAction={ setProjectFilterAction }
+          onSelect={ selectProject }
         />
         <ProjectsTable/>
       </Container>
     )
   }
-
 }
 
 export default connect(

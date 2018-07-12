@@ -70,15 +70,18 @@ export default class ProjectEdit extends React.Component {
                 <label>Description</label>
                 <TextArea key={pageTitle} rows={10} ref={c => { this.description = c } } placeholder="Enter Text" onChange={ this.onChange } value={ description }/>
               </div>
-              <div className="ui active field right aligned">
-                <button onClick={ this.onSubmit } className="ui submit primary button">{submitTitle}</button>              
-              </div>  
+              
             </div>
           </div>
           <div className="ui eight wide column">
             <MemberListEdit members={project.members} />
           </div>
-        </div> 
+          <div className="ui eight wide column">
+            <div className="ui active field right aligned">
+                  <button onClick={ this.onSubmit } className="ui submit primary button">{submitTitle}</button>              
+            </div>
+          </div>  
+        </div>
       </div>
     )
   }

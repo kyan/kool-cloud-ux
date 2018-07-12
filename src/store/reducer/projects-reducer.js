@@ -9,6 +9,16 @@ export function projects(projects=[], action) {
     case ProjectConstants.LISTED:
       projects = action.payload;
       break;
+    case ProjectConstants.READ:
+      projects =  projects.map((project)=>{
+        if (project.id === action.payload.id) {
+          
+          return action.payload
+        } else {
+          return project
+        }
+      });
+      break
     case SessionConstants.SIGNED_OUT:
       projects = [projects[0]];
       break;
@@ -34,6 +44,7 @@ export function projectCreationState (creationProjectState={}, action) {
 };
 
 export function activeProject (activeProject={}, action) {
+  
   switch(action.type) {
     case ProjectConstants.READ:
       activeProject = action.payload;

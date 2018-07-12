@@ -1,7 +1,7 @@
 import { combineReducers } from "redux"
 import { projects, searchFilter, activeProject, projectCreationState } from "./projects-reducer"
 import session from "./session-reducer"
-import users from "./users-reducer"
+import { users, userSearchFilter } from "./users-reducer"
 
 export default combineReducers({ 
   users,
@@ -10,5 +10,6 @@ export default combineReducers({
   activeProject,
   projectCreationState,
   searchFilter,
+  userSearchFilter,
 });
 

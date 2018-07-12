@@ -1,0 +1,15 @@
+export default {
+  LIST: "MemberConstant.LIST",
+  LISTING: "MemberConstant.LISTING",
+  LISTED: "MemberConstant.LISTED",
+  CREATING: "MemberConstant.CREATING",
+  CREATE_FAILED: "MemberConstant.CREATE_FAILED",
+  CREATED: "MemberConstant.CREATED",
+  READING: "MemberConstant.READING",
+  READ: "MemberConstant.READ",
+  UPDATING: "MemberConstant.UPDATING",
+  UPDATE_FAILED: "MemberConstant.UPDATE_FAILED",
+  UPDATED: "MemberConstant.UPDATED",
+  DELETING: "MemberConstant.DELETING",
+  DELETED: "MemberConstant.DELETED",
+}

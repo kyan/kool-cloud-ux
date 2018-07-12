@@ -10,6 +10,10 @@ export const session = {
     return state().session.user.name;
   },
 
+  get userId() {
+    return state().session.user.id;
+  },
+
   get errors() {
     return state().session.errors;
   },

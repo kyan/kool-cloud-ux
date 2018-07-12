@@ -4,6 +4,7 @@ import Home from './routes/home'
 import ProjectShow from './routes/project/project-show'
 import ProjectEdit from './routes/project/project-edit'
 import ProjectNew from './routes/project/project-new'
+import ShotEdit from './routes/shot/shot-edit'
 import Signin from './routes/session/signin'
 import CreateAccount from './routes/session/create-account'
 import NotFound from './routes/404'
@@ -17,6 +18,7 @@ const App = () => (
         <Route path="/project/new" component={ ProjectNew } />
         <Route path="/project/show/:id" component={ ProjectShow } />
         <Route path="/project/edit/:id" component={ProjectEdit} />
+        <Route path="/shot/edit/:id" component={ShotEdit} />
         <Route path="/signin" component={Signin} />
         <Route path="/create-account" component={CreateAccount} />
         <Route path="*" component={NotFound} />

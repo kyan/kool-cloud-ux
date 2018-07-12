@@ -15,40 +15,39 @@ const addSessionParams = (url) => {
   return url;
 }
 
-export const readProjectsList = (cb, error) => {
-  
+export const readUserList = (cb, error) => {
   client({
     method: 'get',
-    url: addSessionParams('/projects')
+    url: addSessionParams('/users')
   }).then(cb).catch(error);
 }
 
-export function createProject (data, cb, error ) {
+export function createUser (data, cb, error ) {
   client({
     method: 'post',
-    url: addSessionParams('/projects'),
+    url: addSessionParams('/users'),
     data
   }).then(cb).catch(error);
 }
 
-export function readProject (id, cb, error) {
+export function readUser (id, cb, error) {
   client({
     method: 'get',
-    url: addSessionParams(`/projects/${id}`)
+    url: addSessionParams(`/users/${id}`)
   }).then(cb).catch(error);
 }
 
-export function updateProject (data, cb, error) {
+export function updateUser (data, cb, error) {
   client({
     method: 'put',
-    url: addSessionParams(`/projects/${data.id}`),
+    url: addSessionParams(`/users/${data.id}`),
     data
   }).then(cb).catch(error);
 }
 
-export function deleteProject(cb, error, id) {
+export function deleteUser(cb, error, id) {
   client({
     method: 'delete',
-    url: addSessionParams(`/projects/${id}`)
+    url: addSessionParams(`/users/${id}`)
   }).then(cb).catch(error);
 }

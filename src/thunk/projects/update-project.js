@@ -27,6 +27,7 @@ export default function update () {
           });
           return;
         }
+        console.log(req.data.project)
         dispatch(
           {
             type: ProjectConstants.UPDATED,

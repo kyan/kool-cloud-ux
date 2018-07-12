@@ -9,8 +9,9 @@ export default function MemberList({ members }) {
           members.map(function(member, index) {
             return (
                 <Label key={index} image>
-                  <img alt='' src='./img/fake-image.png' />
+                  <i className="certificate icon"></i>
                   { member.username }
+                  <div className="detail">{ member.role }</div>
                 </Label>
             )
           })

@@ -9,7 +9,7 @@ const Signin = function () {
   const signInClick = (formInfo) => {
     dispatch(signIn(formInfo));
   }
-
+  
   return (
     <SignInPresentor errors={ session.errors } signedin={ session.signedIn } signIn={ signInClick } /> 
   )

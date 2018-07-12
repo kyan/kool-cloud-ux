@@ -2,7 +2,7 @@ import React from "react";
 import { Table, Popup } from 'semantic-ui-react'
 import FadeIn from 'react-fade-in';
 
-export default function ProjectTableRow ({ actions, project, users }) {
+export default function ProjectTableRow ({ actions, project }) {
 
     const createActionIcon = (can, key, action, icon, tooltip ) => 
                   (can &&

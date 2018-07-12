@@ -10,6 +10,9 @@ class ProjectsTable extends Component {
 
   rows(projects) {
     return (projects) ? projects.map((project, index) => {
+      
+      const owner = project.members.find(member => member.role==='owner')
+      project.owner = owner.username;
       const actions = {
         view: changeLocation(`#/project/show/${project.id}`),
         edit: changeLocation(`#/project/edit/${project.id}`)
@@ -19,7 +22,6 @@ class ProjectsTable extends Component {
         <ProjectTableRow className='ui celled table'
           actions={ actions }
           project={ project }
-          users={ this.props.projects }
           key={ index }
         />
       )
@@ -27,8 +29,7 @@ class ProjectsTable extends Component {
   }
 
   render() {
-    const {projects, searchFilter} = this.props;
-
+    const { projects, searchFilter } = this.props;
     return (
       <Table basic='very' celled >
         <Table.Header>

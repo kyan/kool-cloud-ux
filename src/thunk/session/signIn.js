@@ -8,15 +8,17 @@ function formInfoComplete(signForm, dispatch) {
     errors: {}
   }
 
-  if (!signForm.user) {
-    session.errors.user = 'User is Required';
+  if (!signForm.name) {
+    session.errors.name = 'User is Required';
   }
 
   if (!signForm.password) {
     session.errors.password = 'Password is Required';
   }
 
+
   if (!hasNoProps(session.errors)) {
+    session.errors.flash = 'Incomplete';
     dispatch({ type: SessionConstants.SIGNIN_FAILED, payload:session });
     return false
   }
@@ -47,14 +49,16 @@ export default function (signForm) {
                 flash: res.data.error
               }
             }
+
             dispatch({ type: SessionConstants.SIGNIN_FAILED, payload:session });
+            return
           }
 
           const session = {
             jwt: res.data.jwt,
             user: {
               id: res.data.userid,
-              name: signForm.user, 
+              name: signForm.name, 
               password: ''
             },
             networkState: SessionConstants.SIGNED_IN
@@ -67,6 +71,7 @@ export default function (signForm) {
           window.location='/#'
         },
         (error) => {
+          
           const session = {
             user: signForm,
             errors: {
@@ -76,6 +81,6 @@ export default function (signForm) {
           dispatch({ type: SessionConstants.SIGNIN_FAILED, payload:session });
         }
       );
-    }
+    } 
   }
 }

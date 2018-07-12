@@ -8,7 +8,6 @@ export default class CreateShotCard extends React.Component {
     onSubmit = (e) => {
       e.preventDefault();
       if(this.title.value !=='' && this.description.ref.value !=='') {
-        console.log("john", this.title.value, this.description.ref.value)
         create({
           title: this.title.value,
           description: this.description.ref.value
