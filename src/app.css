@@ -10,6 +10,10 @@
   .signin-cloudlogo > img {
     width: 150px !important; } }
 
+.ui.mini.modal > .header {
+  background-color: #408AF3;
+  color: white; }
+
 .ui.teal.header {
   color: #ffffff !important; }
 
