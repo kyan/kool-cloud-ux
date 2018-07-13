@@ -9,7 +9,7 @@ export default function HomeMasthead({signedin}) {
           <a href="#/signin"><i className="user circle icon"></i>Sign In</a>
         </div>
         <div className="column">
-          <a href="#/signup"><i className="arrow circle right icon"></i>Sign Up</a>
+          <a href="#/create-account"><i className="arrow circle right icon"></i>Sign Up</a>
         </div>
       </div>  
     </div>);
