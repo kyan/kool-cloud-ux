@@ -3,6 +3,7 @@ import { Component } from "react";
 import { connect } from "react-redux"
 import { Modal, Card, Icon, Divider } from 'semantic-ui-react'
 import ModalConstant from '../../constant/modal'
+import { userWithID } from '../../pipes/users' 
 
 class VideoModal extends Component {
 
@@ -11,7 +12,7 @@ class VideoModal extends Component {
     return (
       (projectCreationState.type === ModalConstant.OPEN_VIDEO_MODAL) && 
       <Modal dimmer={'blurring'} size={'mini'} open={true}  onClose={ projectCreationState.message.reject}>
-        <Modal.Header>Test Video</Modal.Header>
+        <Modal.Header>{projectCreationState.message.shot.title}</Modal.Header>
         <Modal.Content>
         <Card>
           <Card.Content >
@@ -21,9 +22,9 @@ class VideoModal extends Component {
             <Card.Header></Card.Header>
             <Divider/>
             <Card.Meta>
-              <span className='date'><Icon name='user' />Created by John</span>
+              <span className='date'><Icon name='user' />Created by { userWithID(projectCreationState.message.shot.userid) } John</span>
             </Card.Meta>
-            <Card.Description>This is a strange lion.</Card.Description>
+            <Card.Description>{projectCreationState.message.shot.description}</Card.Description>
           </Card.Content>
           <Card.Content extra>
           </Card.Content>
