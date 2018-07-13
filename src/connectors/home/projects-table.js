@@ -10,7 +10,6 @@ class ProjectsTable extends Component {
 
   rows(projects) {
     return (projects) ? projects.map((project, index) => {
-      
       const owner = project.members.find(member => member.role==='owner')
       project.owner = owner.username;
       const actions = {

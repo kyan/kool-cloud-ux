@@ -1,0 +1,4 @@
+export default {
+  OPEN_DECISION_MODAL: "ModalConstant.OPEN_DECISION_MODAL",
+  CLOSE_DECISION_MODAL: "ModalConstant.CLOSE_DECISION_MODAL"
+}

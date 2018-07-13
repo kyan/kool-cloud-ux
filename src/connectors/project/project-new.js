@@ -17,7 +17,7 @@ class ProjectNew extends Component {
   }
 
   isLoading(projectCreationState) {
-    return (projectCreationState.type === ProjectConstants.CREATING)
+    return (projectCreationState.type === ProjectConstants.CREATING) || (projectCreationState.type === ProjectConstants.READING)
   }
 
   flashMessage(projectCreationState) {

@@ -18,7 +18,7 @@ class ProjectEdit extends Component {
   }
 
   isLoading(projectCreationState) {
-    return (projectCreationState.type === ProjectConstants.UPDATING) || (projectCreationState.type === ProjectConstants.READING)
+    return ((projectCreationState.type === ProjectConstants.UPDATING) || (projectCreationState.type === ProjectConstants.READING))
   }
 
   flashMessage(projectCreationState) {
@@ -29,7 +29,6 @@ class ProjectEdit extends Component {
 
   render() {
     const { project, projectCreationState } = this.props;
-    
     return (
       <ProjectEditPresentor submitTitle='Modify' pageTitle='Modify project' project= {project} onSubmit={ this.onSubmit } onChange={ this.onChange } loading={ this.isLoading(projectCreationState) } flash={ this.flashMessage(projectCreationState) } />
     );

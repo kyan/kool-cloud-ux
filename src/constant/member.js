@@ -10,6 +10,7 @@ export default {
   UPDATING: "MemberConstant.UPDATING",
   UPDATE_FAILED: "MemberConstant.UPDATE_FAILED",
   UPDATED: "MemberConstant.UPDATED",
+  REQUESTING_DELETE: "MemberConstant.REQUESTING_DELETE",
   DELETING: "MemberConstant.DELETING",
   DELETED: "MemberConstant.DELETED",
 }

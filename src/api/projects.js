@@ -16,7 +16,6 @@ const addSessionParams = (url) => {
 }
 
 export const readProjectsList = (cb, error) => {
-  
   client({
     method: 'get',
     url: addSessionParams('/projects')
