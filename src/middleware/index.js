@@ -1,7 +1,6 @@
 import { applyMiddleware } from "redux"
 import thunk from 'redux-thunk';
 // import { createLogger } from 'redux-logger'
-import apiMiddleware from "./api"
 
 const errorMiddleWare = (store) => (next) => (action) => {  
   if(!action.type) {
@@ -14,4 +13,4 @@ const errorMiddleWare = (store) => (next) => (action) => {
   }
 }
 
-export default applyMiddleware(thunk, apiMiddleware, errorMiddleWare);
+export default applyMiddleware(thunk, errorMiddleWare);

@@ -1,27 +1,27 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import Home from './routes/home'
-import ProjectShow from './routes/project/project-show'
-import ProjectEdit from './routes/project/project-edit'
-import ProjectNew from './routes/project/project-new'
-import ShotEdit from './routes/shot/shot-edit'
-import Signin from './routes/session/signin'
-import CreateAccount from './routes/session/create-account'
-import NotFound from './routes/404'
+import HomeRoute from './route/home-route'
+import ProjectShowRoute from './route/project/project-show-route'
+import ProjectEditRoute from './route/project/project-edit-route'
+import ProjectNewRoute from './route/project/project-new-route'
+import ShotEditRoute from './route/shot/shot-edit-route'
+import SigninRoute from './route/session/signin-route'
+import CreateAccountRoute from './route/session/create-account-route'
+import NotFound from './route/404'
 import "./app.css"
 
 const App = () => (
   <div>
     <Router>
       <Switch>
-        <Route exact path="/" component={ Home }/>
-        <Route path="/project/new" component={ ProjectNew } />
-        <Route path="/project/show/:id" component={ ProjectShow } />
-        <Route path="/project/edit/:id" component={ProjectEdit} />
-        <Route path="/shot/edit/:id" component={ShotEdit} />
-        <Route path="/signin" component={Signin} />
-        <Route path="/create-account" component={CreateAccount} />
-        <Route path="*" component={NotFound} />
+        <Route exact path="/" component={ HomeRoute }/>
+        <Route path="/project/new" component={ ProjectNewRoute } />
+        <Route path="/project/show/:id" component={ ProjectShowRoute } />
+        <Route path="/project/edit/:id" component={ProjectEditRoute} />
+        <Route path="/shot/edit/:id" component={ShotEditRoute} />
+        <Route path="/signin" component={SigninRoute} />
+        <Route path="/create-account" component={ CreateAccountRoute } />
+        <Route path="*" component={ NotFound } />
       </Switch>
     </Router>
     <footer className="page-footer">
