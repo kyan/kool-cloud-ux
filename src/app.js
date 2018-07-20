@@ -7,7 +7,10 @@ import ProjectNewRoute from './route/project/project-new-route'
 import ShotEditRoute from './route/shot/shot-edit-route'
 import SigninRoute from './route/session/signin-route'
 import CreateAccountRoute from './route/session/create-account-route'
+import DecisionModal from './connector/modal/decision-modal'
 import NotFound from './route/404'
+import BusyModal from './connector/modal/busy-modal'
+import VideoModal from './connector/modal/video-modal'
 import "./app.css"
 
 const App = () => (
@@ -24,6 +27,9 @@ const App = () => (
         <Route path="*" component={ NotFound } />
       </Switch>
     </Router>
+    <BusyModal />
+    <DecisionModal />
+    <VideoModal />
     <footer className="page-footer">
       <div className="ui container">
         <p>© KoolCloud 2018</p>

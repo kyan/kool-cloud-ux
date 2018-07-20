@@ -7,6 +7,7 @@ import ShotList from "../../view/shot/shot-list"
 import MemberList from "../../view/member/member-list"
 
 class ProjectShowConnector extends Component {
+  
   render() {
     const { project } = this.props;
     const title = (project) && project.title;

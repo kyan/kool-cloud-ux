@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import openVideoModal from '../../action/modals/open-video-modal';
+
 export default function ShotCard ({shot, editable}) {
     const editShot = (e) => {
       window.location = `#/shot/edit/345678`

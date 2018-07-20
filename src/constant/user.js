@@ -5,5 +5,5 @@ export default {
   CREATE: "UserConstant.CREATE",
   CREATING: "UserConstant.CREATING",
   CREATED: "UserConstant.CREATED",
-  SET_USER_SEARCH_FILTER: "UserConstant.SET_USER_SEARCH_FILTER",
+  SET_USER_SEARCH_FILTER: "UserConstant.SET_USER_SEARCH_FILTER"
 }

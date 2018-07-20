@@ -1,29 +1,5 @@
 import React from "react";
-import classNames from "classnames"
-
-class FormInput extends React.Component {
-
-  get value() {
-    return (this.refs.input.value);
-  }
-
-  render() {
-    const { error, label, name, type, icon } = this.props;
-    const iconClasses = classNames(icon, 'icon inverted');
-    const errorIcon = error && (<div className="floating ui red label"><i className="exclamation triangle icon"></i></div>);
-
-    return(
-      <div className="field">
-        <label>{ label }</label>
-        <div className="ui left icon input" data-tooltip={ error } data-position="top center">
-            { errorIcon }
-            <i className={ iconClasses }></i>
-          <input type={ type } name={ name } ref='input'/>
-        </div>
-      </div>
-    )
-  }
-}
+import FormInput from '../form/form-input'
 
 class Signin extends React.Component {
 
@@ -63,14 +39,12 @@ class Signin extends React.Component {
                 <h3>Sign in { errors && (<a className="ui red tag label">{ errors.flash }</a>) }</h3>
                 <FormInput ref='name' error={ errors && errors.name  }
                   label='User or email'
-                  name='email'
                   type='text'
                   icon='user'
                   validators={ [] }
                 />
                 <FormInput ref='password' error={ errors && errors.password }
                   label='Password'
-                  name='password'
                   type='password'
                   icon='lock'
                   validators={ [] }

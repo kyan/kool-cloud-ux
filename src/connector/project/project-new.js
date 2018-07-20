@@ -16,10 +16,6 @@ class ProjectNewConnector extends Component {
     createProject();
   }
 
-  isLoading(projectCreationState) {
-    return (projectCreationState.type === ProjectConstants.CREATING) || (projectCreationState.type === ProjectConstants.READING)
-  }
-
   flashMessage(projectCreationState) {
     if (projectCreationState.type === ProjectConstants.CREATE_FAILED) {
       return projectCreationState.message
@@ -29,7 +25,7 @@ class ProjectNewConnector extends Component {
   render() {
     const { project, projectCreationState } = this.props;
     return (
-      <ProjectEdit submitTitle='Create' pageTitle='New project' project={project} onSubmit={ this.onSubmit } onChange={ this.onChange } loading={ this.isLoading(projectCreationState) } flash={ this.flashMessage(projectCreationState) } />
+      <ProjectEdit submitTitle='Create' pageTitle='New project' project={project} onSubmit={ this.onSubmit } onChange={ this.onChange } flash={ this.flashMessage(projectCreationState) } />
     );
   }
 }

@@ -3,7 +3,6 @@ import { Dropdown, TextArea, Message } from 'semantic-ui-react'
 import HeaderBar from "../../connector/header-bar"
 import MastheadSmall from "../../view/masthead-small"
 import MemberListEdit from "../../view/member/member-list-edit"
-import { Modal } from 'semantic-ui-react'
 export default class ProjectEdit extends React.Component {
 
   createOnChangeObject (status) {
@@ -33,7 +32,7 @@ export default class ProjectEdit extends React.Component {
   }
 
   render() {
-    const { loading, submitTitle, pageTitle, flash, project : {title, description, status} } = this.props;
+    const { submitTitle, pageTitle, flash, project : {title, description, status} } = this.props;
     const { project } = this.props;
     const defaultStatus = status ? status: "private";
     
@@ -82,17 +81,6 @@ export default class ProjectEdit extends React.Component {
                   <button onClick={ this.onSubmit } className="ui submit primary button">{submitTitle}</button>              
             </div>
           </div>  
-          <Modal open={loading } dimmer='inverted'>
-            <Modal.Header></Modal.Header>
-            <Modal.Content>
-            <div className="ui segment">
-              <div className="ui active inverted dimmer">
-                <div className="ui small text loader">Saving Project</div>
-              </div>
-            </div>
-            </Modal.Content>
-          </Modal>  
-
         </div>
       </div>
     )

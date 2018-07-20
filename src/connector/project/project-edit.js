@@ -17,10 +17,6 @@ class ProjectEditConnector extends Component {
     updateProject();
   }
 
-  isLoading(projectCreationState) {
-    return ((projectCreationState.type === ProjectConstants.UPDATING) || (projectCreationState.type === ProjectConstants.READING))
-  }
-
   flashMessage(projectCreationState) {
     if (projectCreationState.type === ProjectConstants.UPDATE_FAILED) {
       return projectCreationState.message
@@ -30,7 +26,7 @@ class ProjectEditConnector extends Component {
   render() {
     const { project, projectCreationState } = this.props;
     return (
-      <ProjectEditPresentor submitTitle='Modify' pageTitle='Modify project' project= {project} onSubmit={ this.onSubmit } onChange={ this.onChange } loading={ this.isLoading(projectCreationState) } flash={ this.flashMessage(projectCreationState) } />
+      <ProjectEditPresentor submitTitle='Modify' pageTitle='Modify project' project= {project} onSubmit={ this.onSubmit } onChange={ this.onChange } flash={ this.flashMessage(projectCreationState) } />
     );
   }
 }

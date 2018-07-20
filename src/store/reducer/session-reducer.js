@@ -12,8 +12,8 @@ const initialSession = {
 
 const session = function (state=initialSession, action) {
   switch(action.type) {
-    case SessionConstants.SIGNED_INPROGRESS:
-      state = {...state, networkState: SessionConstants.SIGNED_INPROGRESS};
+    case SessionConstants.SIGNING_IN:
+      state = {...state, networkState: SessionConstants.SIGNING_IN};
       break;
     case SessionConstants.SIGNED_IN:
       state = {...state, networkState: SessionConstants.SIGNED_IN, ...action.payload};
@@ -24,6 +24,12 @@ const session = function (state=initialSession, action) {
     case SessionConstants.SIGNIN_FAILED:
       state = {...state,  networkState: SessionConstants.SIGNIN_FAILED, ...action.payload};
       break
+    case SessionConstants.CREATING_ACCOUNT:
+      state = {...state, networkState: SessionConstants.CREATING_ACCOUNT};
+      break;
+    case SessionConstants.CREATE_ACCOUNT_FAILED:
+      state = {...state, networkState: SessionConstants.CREATE_ACCOUNT_FAILED, ...action.payload};
+      break;
     default:
   }
   return state;

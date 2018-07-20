@@ -7,3 +7,7 @@ export function signIn(data, cb, error) {
 export function signOut(data, cb, error ) {
   poll('post', `/signout`, cb, error, data);
 }
+
+export function createUser(data, cb, error ) {
+  poll('post', `/users`, cb, error, data);
+}

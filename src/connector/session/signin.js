@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux"
 import { session } from "../../store/pipe/session"
-import signIn from "../../action/session/signIn" 
+import signIn from "../../action/session/sign-in" 
 import { dispatch } from "../../store/store"
 import SignIn from "../../view/session/signin"
 

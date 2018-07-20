@@ -13,7 +13,7 @@ export default function deleteMember (member) {
       })
 
       dispatch (
-        { 
+        {
           type: ModalConstants.OPEN_DECISION_MODAL, 
           payload: {
             accept: () => {
@@ -21,15 +21,21 @@ export default function deleteMember (member) {
                 members: [
                   ...newMembers
                 ]
-              })
+              });
+              dispatch (
+                { 
+                  type: ModalConstants.CLOSE_DECISION_MODAL
+                }
+              )
             },
             reject: () => {
               dispatch ({ type: ModalConstants.CLOSE_DECISION_MODAL })
-            }
+            },
+            title: 'Remove user',
+            message: 'Are you sure you want to remove this user'
           }
         }
       );
-      
     }
   });
 }

@@ -6,6 +6,7 @@ export default function (dispatch, getState) {
     
   readAllItems(
     req => {
+      console.log('req.data', req.data)
       dispatch(
         {
           type: ProjectConstants.LISTED,

@@ -38,8 +38,19 @@ export function searchFilter (searchFilter='', action) {
 };
 
 export function projectCreationState (creationProjectState={}, action) {
-  
-  creationProjectState = { type: action.type, message: action.payload };
+  switch(action.type) {
+    case ProjectConstants.CREATE_FAILED:
+      creationProjectState = { type: action.type, message: action.payload };
+      break;
+    case ProjectConstants.CREATING:
+      creationProjectState = { type: action.type, message: action.payload };
+      break;
+    case ProjectConstants.CREATED:
+      creationProjectState = { type: action.type, message: action.payload };
+      break;
+    default:
+
+  }
   return creationProjectState;
 };
 

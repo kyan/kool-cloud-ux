@@ -17,7 +17,6 @@ function formInfoComplete(signForm, dispatch) {
     session.errors.password = 'Password is Required';
   }
 
-
   if (!hasNoProps(session.errors)) {
     session.errors.flash = 'Incomplete';
     dispatch({ type: SessionConstants.SIGNIN_FAILED, payload:session });
@@ -64,7 +63,6 @@ export default function (signForm) {
             },
             networkState: SessionConstants.SIGNED_IN
           }
-
           localStorage.setItem('session', JSON.stringify(session));
           
           dispatch({ type: SessionConstants.SIGNED_IN, payload:session });

@@ -1,12 +1,18 @@
 import React from "react";
 import { connect } from "react-redux"
-import signOutClick from "../action/session/signout" 
+import signOut from "../action/session/sign-out" 
 import HeaderBar  from "../view/header-bar"
 import { session } from "../store/pipe/session"
 
 const HeaderBarConnector = function () {
+
+  const signOutClick = (e) => {
+    signOut();
+    e.preventDefault(); 
+  }
+
   return (
-    <HeaderBar signedin={ session.signedIn } user={ session.userName } signOut={ signOutClick() } /> 
+    <HeaderBar signedin={ session.signedIn } user={ session.userName } signOut={ signOutClick } /> 
   )
 }
 
